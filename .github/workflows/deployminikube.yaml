@@ -1,0 +1,44 @@
+name: Deploy Spring Boot to Minikube
+
+on:
+  push:
+    branches:
+      - main  # or whichever branch you prefer
+
+jobs:
+  deploy:
+    runs-on: self-hosted  # 🔑 Minikube must be accessible from the runner
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+
+    - name: Log in to Docker Hub
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: Build and push Docker image
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        push: true
+        tags: bijuthottathil/springboot-crud-k8s:1.0
+
+    - name: Set up kubectl
+      uses: azure/setup-kubectl@v3
+      with:
+        version: 'latest'
+
+    - name: Set KUBECONFIG (for Minikube)
+      run: |
+        echo "KUBECONFIG=$HOME/.kube/config" >> $GITHUB_ENV
+
+    - name: Deploy to Minikube
+      run: |
+        kubectl apply -f k8s/
+        kubectl rollout status deployment/springboot-crud-deployment
