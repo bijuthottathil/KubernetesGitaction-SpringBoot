@@ -17,7 +17,13 @@ jobs:
         kubectl config current-context
     - name: Apply Kubernetes Pod
       run: |
+        kubectl apply -f db-config.yaml
+      run: |
+        kubectl apply -f mysql-secrets.yaml
+      run: |
         kubectl apply -f db-deployment.yaml
+      run: |
+        kubectl apply -f app-deployment.yaml
     - name: Verify Pod Status
       run: |
         kubectl get pods
