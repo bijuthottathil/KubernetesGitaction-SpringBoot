@@ -1,9 +1,7 @@
 name: Deploy Spring Boot to Minikube
 
 on:
-  push:
-    branches:
-      - main  # or whichever branch you prefer
+  workflow_dispatch: 
 
 jobs:
   deploy:
