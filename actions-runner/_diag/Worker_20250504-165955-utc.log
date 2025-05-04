@@ -1,0 +1,3744 @@
+[2025-05-04 16:59:55Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2025-05-04 16:59:55Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:55Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:55Z INFO HostContext] Well known config file 'Credentials': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\.credentials'
+[2025-05-04 16:59:55Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:55Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:55Z INFO HostContext] Well known config file 'Runner': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\.runner'
+[2025-05-04 16:59:55Z INFO Worker] Version: 2.323.0
+[2025-05-04 16:59:55Z INFO Worker] Commit: d8b82f44a9ec0258904d5869ae683c31d5aac299
+[2025-05-04 16:59:55Z INFO Worker] Culture: en-US
+[2025-05-04 16:59:55Z INFO Worker] UI Culture: en-US
+[2025-05-04 16:59:55Z INFO Worker] Waiting to receive the job message from the channel.
+[2025-05-04 16:59:55Z INFO ProcessChannel] Receiving message of length 19103, with hash '9d2204435a8f0d3ba191481f2e491e8545fe1ea0ee90a39d35086beb19997855'
+[2025-05-04 16:59:55Z INFO Worker] Message received.
+[2025-05-04 16:59:56Z INFO Worker] Job message:
+ {
+  "fileTable": [
+    ".github/workflows/deployminikube.yaml"
+  ],
+  "mask": [
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    }
+  ],
+  "steps": [
+    {
+      "type": "action",
+      "reference": {
+        "type": "repository",
+        "name": "actions/checkout",
+        "ref": "v4",
+        "repositoryType": "GitHub"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 10,
+        "col": 13,
+        "lit": "Checkout code"
+      },
+      "contextName": "__actions_checkout",
+      "condition": "success()",
+      "id": "27a4b057-3396-4e82-aa6d-be29b3195ccd",
+      "name": "__actions_checkout"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 13,
+        "col": 13,
+        "lit": "Show Minikube Status"
+      },
+      "contextName": "__run",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 14,
+              "col": 12,
+              "lit": "minikube status\nkubectl config current-context\n"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "15ed26d5-b386-49bd-9565-871bd1c484a3",
+      "name": "__run"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 17,
+        "col": 13,
+        "lit": "Apply Kubernetes Configuration"
+      },
+      "contextName": "__run_2",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 18,
+              "col": 12,
+              "lit": "kubectl apply -f db-config.yaml\n"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "b45de126-43e4-4f06-926c-2e835e9fa6d7",
+      "name": "__run_2"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 20,
+        "col": 13,
+        "lit": "Execute secret Configuration"
+      },
+      "contextName": "__run_3",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 21,
+              "col": 12,
+              "lit": "kubectl apply -f mysql-secrets.yaml\n"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "10b159b4-37a4-4186-9018-6b640a33e86b",
+      "name": "__run_3"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 23,
+        "col": 13,
+        "lit": "Do Db-Deployment"
+      },
+      "contextName": "__run_4",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 24,
+              "col": 12,
+              "lit": "kubectl apply -f db-deployment.yaml\n"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "d714407c-de67-4d63-b3ed-9b08a5839216",
+      "name": "__run_4"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 26,
+        "col": 13,
+        "lit": "Do App-Deployment"
+      },
+      "contextName": "__run_5",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 27,
+              "col": 12,
+              "lit": "kubectl apply -f app-deployment.yaml\n"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "a226ce68-4276-46df-8632-cb1dd855fde9",
+      "name": "__run_5"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 29,
+        "col": 13,
+        "lit": "Verify Pod Status"
+      },
+      "contextName": "__run_6",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 30,
+              "col": 12,
+              "lit": "kubectl get pods"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "5b44c466-189a-4f7c-8c69-4de292a422b5",
+      "name": "__run_6"
+    }
+  ],
+  "variables": {
+    "Actions.EnableHttpRedirects": {
+      "value": "true"
+    },
+    "DistributedTask.AddWarningToNode12Action": {
+      "value": "true"
+    },
+    "DistributedTask.AddWarningToNode16Action": {
+      "value": "true"
+    },
+    "DistributedTask.AllowRunnerContainerHooks": {
+      "value": "true"
+    },
+    "DistributedTask.DeprecateStepOutputCommands": {
+      "value": "true"
+    },
+    "DistributedTask.DetailUntarFailure": {
+      "value": "true"
+    },
+    "DistributedTask.EnableCompositeActions": {
+      "value": "true"
+    },
+    "DistributedTask.EnableJobServerQueueTelemetry": {
+      "value": "true"
+    },
+    "DistributedTask.EnhancedAnnotations": {
+      "value": "true"
+    },
+    "DistributedTask.ForceGithubJavascriptActionsToNode16": {
+      "value": "true"
+    },
+    "DistributedTask.ForceGithubJavascriptActionsToNode20": {
+      "value": "true"
+    },
+    "DistributedTask.LogTemplateErrorsAsDebugMessages": {
+      "value": "true"
+    },
+    "DistributedTask.MarkJobAsFailedOnWorkerCrash": {
+      "value": "true"
+    },
+    "DistributedTask.NewActionMetadata": {
+      "value": "true"
+    },
+    "DistributedTask.UploadStepSummary": {
+      "value": "true"
+    },
+    "DistributedTask.UseActionArchiveCache": {
+      "value": "true"
+    },
+    "DistributedTask.UseWhich2": {
+      "value": "true"
+    },
+    "RunService.FixEmbeddedIssues": {
+      "value": "true"
+    },
+    "actions_add_check_run_id_to_job_context": {
+      "value": "false"
+    },
+    "actions_skip_retry_complete_job_upon_known_errors": {
+      "value": "true"
+    },
+    "actions_uses_cache_service_v2": {
+      "value": "true"
+    },
+    "github_token": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.from_run_service": {
+      "value": "true"
+    },
+    "system.github.job": {
+      "value": "deploy"
+    },
+    "system.github.launch_endpoint": {
+      "value": "https://launch.actions.githubusercontent.com"
+    },
+    "system.github.results_endpoint": {
+      "value": "https://results-receiver.actions.githubusercontent.com/"
+    },
+    "system.github.results_upload_with_sdk": {
+      "value": "true"
+    },
+    "system.github.token": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.github.token.permissions": {
+      "value": "{\"Contents\":\"read\",\"Metadata\":\"read\",\"Packages\":\"read\"}"
+    },
+    "system.orchestrationId": {
+      "value": "f0120857-345d-4a3f-9574-3e0213a8d467.deploy.__default"
+    },
+    "system.phaseDisplayName": {
+      "value": "deploy"
+    },
+    "system.runner.lowdiskspacethreshold": {
+      "value": "100"
+    },
+    "system.runnerEnvironment": {
+      "value": "self-hosted"
+    }
+  },
+  "messageType": "RunnerJobRequest",
+  "plan": {
+    "scopeIdentifier": "00000000-0000-0000-0000-000000000000",
+    "planType": "actions",
+    "version": 0,
+    "planId": "f0120857-345d-4a3f-9574-3e0213a8d467",
+    "planGroup": null,
+    "artifactUri": null,
+    "artifactLocation": null,
+    "definition": null,
+    "owner": null
+  },
+  "timeline": {
+    "id": "f0120857-345d-4a3f-9574-3e0213a8d467",
+    "changeId": 0,
+    "location": null
+  },
+  "jobId": "f43e1860-7014-5e21-b3db-d425795b334b",
+  "jobDisplayName": "deploy",
+  "jobName": "__default",
+  "requestId": 0,
+  "lockedUntil": "0001-01-01T00:00:00",
+  "resources": {
+    "endpoints": [
+      {
+        "data": {
+          "ServerId": "",
+          "ServerName": "",
+          "CacheServerUrl": "https://acghubeus2.actions.githubusercontent.com/IiI6bFxAp2rFRBjz4nNfNzLbwC2F4VL5EJueuc1h62PWzSpiXy/",
+          "FeedStreamUrl": "wss://results-receiver.actions.githubusercontent.com/_ws/ingest.sock",
+          "ResultsServiceUrl": "https://results-receiver.actions.githubusercontent.com/",
+          "PipelinesServiceUrl": "https://pipelinesghubeus10.actions.githubusercontent.com/IiI6bFxAp2rFRBjz4nNfNzLbwC2F4VL5EJueuc1h62PWzSpiXy/",
+          "GenerateIdTokenUrl": ""
+        },
+        "name": "SystemVssConnection",
+        "url": "https://run-actions-1-azure-eastus.actions.githubusercontent.com/63/",
+        "authorization": {
+          "parameters": {
+            "AccessToken": "***"
+          },
+          "scheme": "OAuth"
+        },
+        "isShared": false,
+        "isReady": true
+      }
+    ]
+  },
+  "contextData": {
+    "github": {
+      "t": 2,
+      "d": [
+        {
+          "k": "ref",
+          "v": "refs/heads/main"
+        },
+        {
+          "k": "sha",
+          "v": "ecce04d83c116a8ff466bb99ea47d6b72cb2bd77"
+        },
+        {
+          "k": "repository",
+          "v": "bijuthottathil/kubegitactionnew"
+        },
+        {
+          "k": "repository_owner",
+          "v": "bijuthottathil"
+        },
+        {
+          "k": "repository_owner_id",
+          "v": "63364506"
+        },
+        {
+          "k": "repositoryUrl",
+          "v": "git://github.com/bijuthottathil/kubegitactionnew.git"
+        },
+        {
+          "k": "run_id",
+          "v": "14823340439"
+        },
+        {
+          "k": "run_number",
+          "v": "9"
+        },
+        {
+          "k": "retention_days",
+          "v": "90"
+        },
+        {
+          "k": "run_attempt",
+          "v": "1"
+        },
+        {
+          "k": "artifact_cache_size_limit",
+          "v": "10"
+        },
+        {
+          "k": "repository_visibility",
+          "v": "private"
+        },
+        {
+          "k": "actor_id",
+          "v": "63364506"
+        },
+        {
+          "k": "actor",
+          "v": "bijuthottathil"
+        },
+        {
+          "k": "workflow",
+          "v": "Deploy Spring Boot to Minikube"
+        },
+        {
+          "k": "head_ref",
+          "v": ""
+        },
+        {
+          "k": "base_ref",
+          "v": ""
+        },
+        {
+          "k": "event_name",
+          "v": "workflow_dispatch"
+        },
+        {
+          "k": "server_url",
+          "v": "https://github.com"
+        },
+        {
+          "k": "api_url",
+          "v": "https://api.github.com"
+        },
+        {
+          "k": "graphql_url",
+          "v": "https://api.github.com/graphql"
+        },
+        {
+          "k": "ref_name",
+          "v": "main"
+        },
+        {
+          "k": "ref_protected",
+          "v": false
+        },
+        {
+          "k": "ref_type",
+          "v": "branch"
+        },
+        {
+          "k": "secret_source",
+          "v": "Actions"
+        },
+        {
+          "k": "event",
+          "v": {
+            "t": 2,
+            "d": [
+              {
+                "k": "inputs",
+                "v": null
+              },
+              {
+                "k": "ref",
+                "v": "refs/heads/main"
+              },
+              {
+                "k": "repository",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "allow_forking",
+                      "v": true
+                    },
+                    {
+                      "k": "archive_url",
+                      "v": "https://api.github.com/repos/bijuthottathil/kubegitactionnew/{archive_format}{/ref}"
+                    },
+                    {
+                      "k": "archived",
+                      "v": false
+                    },
+                    {
+                      "k": "assignees_url",
+                      "v": "https://api.github.com/repos/bijuthottathil/kubegitactionnew/assignees{/user}"
+                    },
+                    {
+                      "k": "blobs_url",
+                      "v": "https://api.github.com/repos/bijuthottathil/kubegitactionnew/git/blobs{/sha}"
+                    },
+                    {
+                      "k": "branches_url",
+                      "v": "https://api.github.com/repos/bijuthottathil/kubegitactionnew/branches{/branch}"
+                    },
+                    {
+                      "k": "clone_url",
+                      "v": "https://github.com/bijuthottathil/kubegitactionnew.git"
+                    },
+                    {
+                      "k": "collaborators_url",
+                      "v": "https://api.github.com/repos/bijuthottathil/kubegitactionnew/collaborators{/collaborator}"
+                    },
+                    {
+                      "k": "comments_url",
+                      "v": "https://api.github.com/repos/bijuthottathil/kubegitactionnew/comments{/number}"
+                    },
+                    {
+                      "k": "commits_url",
+                      "v": "https://api.github.com/repos/bijuthottathil/kubegitactionnew/commits{/sha}"
+                    },
+                    {
+                      "k": "compare_url",
+                      "v": "https://api.github.com/repos/bijuthottathil/kubegitactionnew/compare/{base}...{head}"
+                    },
+                    {
+                      "k": "contents_url",
+                      "v": "https://api.github.com/repos/bijuthottathil/kubegitactionnew/contents/{+path}"
+                    },
+                    {
+                      "k": "contributors_url",
+                      "v": "https://api.github.com/repos/bijuthottathil/kubegitactionnew/contributors"
+                    },
+                    {
+                      "k": "created_at",
+                      "v": "2025-05-04T16:14:34Z"
+                    },
+                    {
+                      "k": "default_branch",
+                      "v": "main"
+                    },
+                    {
+                      "k": "deployments_url",
+                      "v": "https://api.github.com/repos/bijuthottathil/kubegitactionnew/deployments"
+                    },
+                    {
+                      "k": "description",
+                      "v": null
+                    },
+                    {
+                      "k": "disabled",
+                      "v": false
+                    },
+                    {
+                      "k": "downloads_url",
+                      "v": "https://api.github.com/repos/bijuthottathil/kubegitactionnew/downloads"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/repos/bijuthottathil/kubegitactionnew/events"
+                    },
+                    {
+                      "k": "fork",
+                      "v": false
+                    },
+                    {
+                      "k": "forks",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_url",
+                      "v": "https://api.github.com/repos/bijuthottathil/kubegitactionnew/forks"
+                    },
+                    {
+                      "k": "full_name",
+                      "v": "bijuthottathil/kubegitactionnew"
+                    },
+                    {
+                      "k": "git_commits_url",
+                      "v": "https://api.github.com/repos/bijuthottathil/kubegitactionnew/git/commits{/sha}"
+                    },
+                    {
+                      "k": "git_refs_url",
+                      "v": "https://api.github.com/repos/bijuthottathil/kubegitactionnew/git/refs{/sha}"
+                    },
+                    {
+                      "k": "git_tags_url",
+                      "v": "https://api.github.com/repos/bijuthottathil/kubegitactionnew/git/tags{/sha}"
+                    },
+                    {
+                      "k": "git_url",
+                      "v": "git://github.com/bijuthottathil/kubegitactionnew.git"
+                    },
+                    {
+                      "k": "has_discussions",
+                      "v": false
+                    },
+                    {
+                      "k": "has_downloads",
+                      "v": true
+                    },
+                    {
+                      "k": "has_issues",
+                      "v": true
+                    },
+                    {
+                      "k": "has_pages",
+                      "v": false
+                    },
+                    {
+                      "k": "has_projects",
+                      "v": true
+                    },
+                    {
+                      "k": "has_wiki",
+                      "v": false
+                    },
+                    {
+                      "k": "homepage",
+                      "v": null
+                    },
+                    {
+                      "k": "hooks_url",
+                      "v": "https://api.github.com/repos/bijuthottathil/kubegitactionnew/hooks"
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/bijuthottathil/kubegitactionnew"
+                    },
+                    {
+                      "k": "id",
+                      "v": 977622225.0
+                    },
+                    {
+                      "k": "is_template",
+                      "v": false
+                    },
+                    {
+                      "k": "issue_comment_url",
+                      "v": "https://api.github.com/repos/bijuthottathil/kubegitactionnew/issues/comments{/number}"
+                    },
+                    {
+                      "k": "issue_events_url",
+                      "v": "https://api.github.com/repos/bijuthottathil/kubegitactionnew/issues/events{/number}"
+                    },
+                    {
+                      "k": "issues_url",
+                      "v": "https://api.github.com/repos/bijuthottathil/kubegitactionnew/issues{/number}"
+                    },
+                    {
+                      "k": "keys_url",
+                      "v": "https://api.github.com/repos/bijuthottathil/kubegitactionnew/keys{/key_id}"
+                    },
+                    {
+                      "k": "labels_url",
+                      "v": "https://api.github.com/repos/bijuthottathil/kubegitactionnew/labels{/name}"
+                    },
+                    {
+                      "k": "language",
+                      "v": "JavaScript"
+                    },
+                    {
+                      "k": "languages_url",
+                      "v": "https://api.github.com/repos/bijuthottathil/kubegitactionnew/languages"
+                    },
+                    {
+                      "k": "license",
+                      "v": null
+                    },
+                    {
+                      "k": "merges_url",
+                      "v": "https://api.github.com/repos/bijuthottathil/kubegitactionnew/merges"
+                    },
+                    {
+                      "k": "milestones_url",
+                      "v": "https://api.github.com/repos/bijuthottathil/kubegitactionnew/milestones{/number}"
+                    },
+                    {
+                      "k": "mirror_url",
+                      "v": null
+                    },
+                    {
+                      "k": "name",
+                      "v": "kubegitactionnew"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "R_kgDOOkVU0Q"
+                    },
+                    {
+                      "k": "notifications_url",
+                      "v": "https://api.github.com/repos/bijuthottathil/kubegitactionnew/notifications{?since,all,participating}"
+                    },
+                    {
+                      "k": "open_issues",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "open_issues_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "owner",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "avatar_url",
+                            "v": "https://avatars.githubusercontent.com/u/63364506?v=4"
+                          },
+                          {
+                            "k": "events_url",
+                            "v": "https://api.github.com/users/bijuthottathil/events{/privacy}"
+                          },
+                          {
+                            "k": "followers_url",
+                            "v": "https://api.github.com/users/bijuthottathil/followers"
+                          },
+                          {
+                            "k": "following_url",
+                            "v": "https://api.github.com/users/bijuthottathil/following{/other_user}"
+                          },
+                          {
+                            "k": "gists_url",
+                            "v": "https://api.github.com/users/bijuthottathil/gists{/gist_id}"
+                          },
+                          {
+                            "k": "gravatar_id",
+                            "v": ""
+                          },
+                          {
+                            "k": "html_url",
+                            "v": "https://github.com/bijuthottathil"
+                          },
+                          {
+                            "k": "id",
+                            "v": 63364506.0
+                          },
+                          {
+                            "k": "login",
+                            "v": "bijuthottathil"
+                          },
+                          {
+                            "k": "node_id",
+                            "v": "MDQ6VXNlcjYzMzY0NTA2"
+                          },
+                          {
+                            "k": "organizations_url",
+                            "v": "https://api.github.com/users/bijuthottathil/orgs"
+                          },
+                          {
+                            "k": "received_events_url",
+                            "v": "https://api.github.com/users/bijuthottathil/received_events"
+                          },
+                          {
+                            "k": "repos_url",
+                            "v": "https://api.github.com/users/bijuthottathil/repos"
+                          },
+                          {
+                            "k": "site_admin",
+                            "v": false
+                          },
+                          {
+                            "k": "starred_url",
+                            "v": "https://api.github.com/users/bijuthottathil/starred{/owner}{/repo}"
+                          },
+                          {
+                            "k": "subscriptions_url",
+                            "v": "https://api.github.com/users/bijuthottathil/subscriptions"
+                          },
+                          {
+                            "k": "type",
+                            "v": "User"
+                          },
+                          {
+                            "k": "url",
+                            "v": "https://api.github.com/users/bijuthottathil"
+                          },
+                          {
+                            "k": "user_view_type",
+                            "v": "public"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "private",
+                      "v": true
+                    },
+                    {
+                      "k": "pulls_url",
+                      "v": "https://api.github.com/repos/bijuthottathil/kubegitactionnew/pulls{/number}"
+                    },
+                    {
+                      "k": "pushed_at",
+                      "v": "2025-05-04T16:58:59Z"
+                    },
+                    {
+                      "k": "releases_url",
+                      "v": "https://api.github.com/repos/bijuthottathil/kubegitactionnew/releases{/id}"
+                    },
+                    {
+                      "k": "size",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "ssh_url",
+                      "v": "git@github.com:bijuthottathil/kubegitactionnew.git"
+                    },
+                    {
+                      "k": "stargazers_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "stargazers_url",
+                      "v": "https://api.github.com/repos/bijuthottathil/kubegitactionnew/stargazers"
+                    },
+                    {
+                      "k": "statuses_url",
+                      "v": "https://api.github.com/repos/bijuthottathil/kubegitactionnew/statuses/{sha}"
+                    },
+                    {
+                      "k": "subscribers_url",
+                      "v": "https://api.github.com/repos/bijuthottathil/kubegitactionnew/subscribers"
+                    },
+                    {
+                      "k": "subscription_url",
+                      "v": "https://api.github.com/repos/bijuthottathil/kubegitactionnew/subscription"
+                    },
+                    {
+                      "k": "svn_url",
+                      "v": "https://github.com/bijuthottathil/kubegitactionnew"
+                    },
+                    {
+                      "k": "tags_url",
+                      "v": "https://api.github.com/repos/bijuthottathil/kubegitactionnew/tags"
+                    },
+                    {
+                      "k": "teams_url",
+                      "v": "https://api.github.com/repos/bijuthottathil/kubegitactionnew/teams"
+                    },
+                    {
+                      "k": "topics",
+                      "v": {
+                        "t": 1
+                      }
+                    },
+                    {
+                      "k": "trees_url",
+                      "v": "https://api.github.com/repos/bijuthottathil/kubegitactionnew/git/trees{/sha}"
+                    },
+                    {
+                      "k": "updated_at",
+                      "v": "2025-05-04T16:59:02Z"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/repos/bijuthottathil/kubegitactionnew"
+                    },
+                    {
+                      "k": "visibility",
+                      "v": "private"
+                    },
+                    {
+                      "k": "watchers",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "watchers_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "web_commit_signoff_required",
+                      "v": false
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "sender",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "avatar_url",
+                      "v": "https://avatars.githubusercontent.com/u/63364506?v=4"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/users/bijuthottathil/events{/privacy}"
+                    },
+                    {
+                      "k": "followers_url",
+                      "v": "https://api.github.com/users/bijuthottathil/followers"
+                    },
+                    {
+                      "k": "following_url",
+                      "v": "https://api.github.com/users/bijuthottathil/following{/other_user}"
+                    },
+                    {
+                      "k": "gists_url",
+                      "v": "https://api.github.com/users/bijuthottathil/gists{/gist_id}"
+                    },
+                    {
+                      "k": "gravatar_id",
+                      "v": ""
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/bijuthottathil"
+                    },
+                    {
+                      "k": "id",
+                      "v": 63364506.0
+                    },
+                    {
+                      "k": "login",
+                      "v": "bijuthottathil"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "MDQ6VXNlcjYzMzY0NTA2"
+                    },
+                    {
+                      "k": "organizations_url",
+                      "v": "https://api.github.com/users/bijuthottathil/orgs"
+                    },
+                    {
+                      "k": "received_events_url",
+                      "v": "https://api.github.com/users/bijuthottathil/received_events"
+                    },
+                    {
+                      "k": "repos_url",
+                      "v": "https://api.github.com/users/bijuthottathil/repos"
+                    },
+                    {
+                      "k": "site_admin",
+                      "v": false
+                    },
+                    {
+                      "k": "starred_url",
+                      "v": "https://api.github.com/users/bijuthottathil/starred{/owner}{/repo}"
+                    },
+                    {
+                      "k": "subscriptions_url",
+                      "v": "https://api.github.com/users/bijuthottathil/subscriptions"
+                    },
+                    {
+                      "k": "type",
+                      "v": "User"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/users/bijuthottathil"
+                    },
+                    {
+                      "k": "user_view_type",
+                      "v": "public"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "workflow",
+                "v": ".github/workflows/deployminikube.yaml"
+              }
+            ]
+          }
+        },
+        {
+          "k": "workflow_ref",
+          "v": "bijuthottathil/kubegitactionnew/.github/workflows/deployminikube.yaml@refs/heads/main"
+        },
+        {
+          "k": "workflow_sha",
+          "v": "ecce04d83c116a8ff466bb99ea47d6b72cb2bd77"
+        },
+        {
+          "k": "repository_id",
+          "v": "977622225"
+        },
+        {
+          "k": "triggering_actor",
+          "v": "bijuthottathil"
+        }
+      ]
+    },
+    "inputs": {
+      "t": 2
+    },
+    "matrix": null,
+    "needs": {
+      "t": 2
+    },
+    "strategy": {
+      "t": 2,
+      "d": [
+        {
+          "k": "fail-fast",
+          "v": true
+        },
+        {
+          "k": "job-index",
+          "v": 0.0
+        },
+        {
+          "k": "job-total",
+          "v": 1.0
+        },
+        {
+          "k": "max-parallel",
+          "v": 1.0
+        }
+      ]
+    },
+    "vars": {
+      "t": 2
+    }
+  },
+  "billingOwnerId": "U_kgDOA8bdmg"
+}
+[2025-05-04 16:59:56Z INFO JobRunner] Job ID f43e1860-7014-5e21-b3db-d425795b334b
+[2025-05-04 16:59:56Z INFO ConfigurationStore] currentAssemblyLocation: D:\springboot-GitAction\kubegitactionnew\actions-runner\bin\Runner.Worker.dll
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:56Z INFO ConfigurationStore] binPath: D:\springboot-GitAction\kubegitactionnew\actions-runner\bin
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:56Z INFO ConfigurationStore] RootFolder: D:\springboot-GitAction\kubegitactionnew\actions-runner
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:56Z INFO HostContext] Well known config file 'Runner': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\.runner'
+[2025-05-04 16:59:56Z INFO ConfigurationStore] ConfigFilePath: D:\springboot-GitAction\kubegitactionnew\actions-runner\.runner
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:56Z INFO HostContext] Well known config file 'MigratedRunner': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\.runner_migrated'
+[2025-05-04 16:59:56Z INFO ConfigurationStore] MigratedConfigFilePath: D:\springboot-GitAction\kubegitactionnew\actions-runner\.runner_migrated
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:56Z INFO HostContext] Well known config file 'Credentials': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\.credentials'
+[2025-05-04 16:59:56Z INFO ConfigurationStore] CredFilePath: D:\springboot-GitAction\kubegitactionnew\actions-runner\.credentials
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:56Z INFO HostContext] Well known config file 'MigratedCredentials': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\.credentials_migrated'
+[2025-05-04 16:59:56Z INFO ConfigurationStore] MigratedCredFilePath: D:\springboot-GitAction\kubegitactionnew\actions-runner\.credentials_migrated
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:56Z INFO HostContext] Well known config file 'Service': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\.service'
+[2025-05-04 16:59:56Z INFO ConfigurationStore] ServiceConfigFilePath: D:\springboot-GitAction\kubegitactionnew\actions-runner\.service
+[2025-05-04 16:59:56Z INFO ConfigurationStore] Read setting file: 312 chars
+[2025-05-04 16:59:56Z INFO JobRunner] Initializing launch client
+[2025-05-04 16:59:56Z INFO JobServerQueue] Initializing results client
+[2025-05-04 16:59:56Z INFO ResultServer] Creating websocket client ...wss://results-receiver.actions.githubusercontent.com/_ws/ingest.sock
+[2025-05-04 16:59:56Z INFO ResultServer] Attempting to start websocket client with delay 00:00:00.
+[2025-05-04 16:59:56Z INFO JobServerQueue] Start process web console line queue.
+[2025-05-04 16:59:56Z INFO JobServerQueue] Start process file upload queue.
+[2025-05-04 16:59:56Z INFO JobServerQueue] Start results file upload queue.
+[2025-05-04 16:59:56Z INFO JobServerQueue] Starting results-based upload queue...
+[2025-05-04 16:59:56Z INFO JobServerQueue] Start process timeline update queue.
+[2025-05-04 16:59:56Z INFO ExecutionContext] Initialize GitHub context
+[2025-05-04 16:59:56Z INFO ExecutionContext] Initialize Env context
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Diag': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_diag'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Diag': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_diag'
+[2025-05-04 16:59:56Z INFO JobRunner] Starting the job execution context.
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 16:59:56Z INFO JobRunner] Validating directory permissions for: 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Tools': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_tool'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Temp': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp'
+[2025-05-04 16:59:56Z INFO JobRunner] Getting job extension.
+[2025-05-04 16:59:56Z INFO JobRunner] Initialize job. Getting all job steps.
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Diag': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_diag'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Diag': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_diag'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:56Z INFO HostContext] Well known config file 'Credentials': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\.credentials'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:56Z INFO HostContext] Well known config file 'SetupInfo': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\.setup_info'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 16:59:56Z INFO PipelineDirectoryManager] Loading tracking config if exists: D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_PipelineMapping\bijuthottathil/kubegitactionnew\PipelineFolder.json
+[2025-05-04 16:59:56Z INFO PipelineDirectoryManager] Updating job run properties.
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 16:59:56Z INFO JobExtension] Downloading actions
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Actions': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_actions'
+[2025-05-04 16:59:56Z INFO Worker] Listening for cancel message from the channel.
+[2025-05-04 16:59:56Z INFO Worker] Waiting for the job to complete or for a cancel message from the channel.
+[2025-05-04 16:59:56Z INFO ResultServer] Successfully started websocket client.
+[2025-05-04 16:59:56Z INFO JobServerQueue] Try to append 1 batches web console lines for record '0c598bc4-6ba9-4124-93d0-83047162f211', success rate: 1/1.
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Actions': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_actions'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 16:59:56Z INFO HostContext] Well known directory 'Actions': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_actions'
+[2025-05-04 16:59:56Z INFO ActionManager] Save archive 'https://api.github.com/repos/actions/checkout/zipball/11bd71901bbe5b1630ceea73d27597364c9af683' into D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_actions\_temp_6aa54925-118f-4e47-b90a-883be4d439e1\d49f2b88-cc45-4e66-b8a5-3fb266b3a148.zip.
+[2025-05-04 16:59:56Z INFO JobServerQueue] Try to append 1 batches web console lines for record '0c598bc4-6ba9-4124-93d0-83047162f211', success rate: 1/1.
+[2025-05-04 16:59:56Z INFO JobServerQueue] Job timeline record has been updated for the first time.
+[2025-05-04 16:59:57Z INFO ActionManager] Request URL: https://api.github.com/repos/actions/checkout/zipball/11bd71901bbe5b1630ceea73d27597364c9af683 X-GitHub-Request-Id: F722:3DB85C:2A4959:4987D8:68179D0E Http Status: OK
+[2025-05-04 16:59:57Z INFO ActionManager] Finished getting action repository.
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Actions': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_actions'
+[2025-05-04 16:59:57Z INFO ActionManifestManager] Load schema file with definitions: [
+  "null",
+  "boolean",
+  "number",
+  "string",
+  "sequence",
+  "mapping",
+  "any",
+  "action-root",
+  "inputs",
+  "input",
+  "outputs",
+  "output-definition",
+  "runs",
+  "container-runs",
+  "container-runs-args",
+  "container-runs-env",
+  "node-runs",
+  "plugin-runs",
+  "composite-runs",
+  "composite-steps",
+  "composite-step",
+  "run-step",
+  "uses-step",
+  "container-runs-context",
+  "output-value",
+  "input-default-context",
+  "non-empty-string",
+  "string-steps-context",
+  "boolean-steps-context",
+  "step-env",
+  "step-if",
+  "step-with"
+]
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Actions': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_actions'
+[2025-05-04 16:59:57Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "ssh-user"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 14,
+          "lit": "git"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 52,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 54,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 57,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 3,
+          "lit": "filter"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 64,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 69,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 76,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 77,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 79,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 80,
+          "col": 3,
+          "lit": "show-progress"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 83,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 85,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 86,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 94,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 95,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 97,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 98,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node20",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2025-05-04 16:59:57Z INFO ActionManager] Action node.js file: dist/index.js, no more preparation.
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Actions': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_actions'
+[2025-05-04 16:59:57Z INFO ActionManager] Load action that reference repository from 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_actions\actions\checkout\v4'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Actions': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_actions'
+[2025-05-04 16:59:57Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "ssh-user"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 14,
+          "lit": "git"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 52,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 54,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 57,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 3,
+          "lit": "filter"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 64,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 69,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 76,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 77,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 79,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 80,
+          "col": 3,
+          "lit": "show-progress"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 83,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 85,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 86,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 94,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 95,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 97,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 98,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node20",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2025-05-04 16:59:57Z INFO ActionManager] Action pre node.js file: N/A.
+[2025-05-04 16:59:57Z INFO ActionManager] Action node.js file: dist/index.js.
+[2025-05-04 16:59:57Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2025-05-04 16:59:57Z INFO JobExtension] Adding .
+[2025-05-04 16:59:57Z INFO JobExtension] Adding .
+[2025-05-04 16:59:57Z INFO JobExtension] Adding .
+[2025-05-04 16:59:57Z INFO JobExtension] Adding .
+[2025-05-04 16:59:57Z INFO JobExtension] Adding .
+[2025-05-04 16:59:57Z INFO JobExtension] Adding .
+[2025-05-04 16:59:57Z INFO JobExtension] Adding .
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Diag': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_diag'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Diag': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_diag'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Diag': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_diag'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Diag': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_diag'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Diag': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_diag'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Diag': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_diag'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Diag': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_diag'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Diag': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_diag'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Diag': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_diag'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Diag': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_diag'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Diag': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_diag'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Diag': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_diag'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Diag': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_diag'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Diag': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_diag'
+[2025-05-04 16:59:57Z INFO JobExtension] Total accessible running process: 322.
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 16:59:57Z INFO JobExtension] Start checking service connectivity in background.
+[2025-05-04 16:59:57Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "setup_job",
+  "type": "runner",
+  "stage": "Pre",
+  "stepId": "0c598bc4-6ba9-4124-93d0-83047162f211",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 2,
+  "startTime": "2025-05-04T16:59:56.2910642Z",
+  "finishTime": "2025-05-04T16:59:57.7557615Z"
+}.
+[2025-05-04 16:59:57Z INFO JobRunner] Total job steps: 7.
+[2025-05-04 16:59:57Z INFO JobRunner] Run all job steps.
+[2025-05-04 16:59:57Z INFO StepsRunner] Processing step: DisplayName='Checkout code'
+[2025-05-04 16:59:57Z INFO StepsRunner] Evaluating: success()
+[2025-05-04 16:59:57Z INFO StepsRunner] Result: true
+[2025-05-04 16:59:57Z INFO StepsRunner] Starting the step.
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 16:59:57Z INFO JobServerQueue] Try to append 1 batches web console lines for record '0c598bc4-6ba9-4124-93d0-83047162f211', success rate: 1/1.
+[2025-05-04 16:59:57Z INFO StepsRunner] Which2: 'chcp'
+[2025-05-04 16:59:57Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2025-05-04 16:59:57Z INFO ProcessInvokerWrapper] Starting process:
+[2025-05-04 16:59:57Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2025-05-04 16:59:57Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2025-05-04 16:59:57Z INFO ProcessInvokerWrapper]   Working directory: 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 16:59:57Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-05-04 16:59:57Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-05-04 16:59:57Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-05-04 16:59:57Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-05-04 16:59:57Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-05-04 16:59:57Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-05-04 16:59:57Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-05-04 16:59:57Z INFO ProcessInvokerWrapper] Process started with process id 18504, waiting for process exit.
+[2025-05-04 16:59:57Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-04 16:59:57Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-04 16:59:57Z INFO ProcessInvokerWrapper] Finished process 18504 with exit code 0, and elapsed time 00:00:00.0146979.
+[2025-05-04 16:59:57Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Actions': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_actions'
+[2025-05-04 16:59:57Z INFO ActionManager] Load action that reference repository from 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_actions\actions\checkout\v4'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Actions': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_actions'
+[2025-05-04 16:59:57Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "ssh-user"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 14,
+          "lit": "git"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 52,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 54,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 57,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 3,
+          "lit": "filter"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 64,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 69,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 76,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 77,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 79,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 80,
+          "col": 3,
+          "lit": "show-progress"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 83,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 85,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 86,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 94,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 95,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 97,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 98,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node20",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2025-05-04 16:59:57Z INFO ActionManager] Action pre node.js file: N/A.
+[2025-05-04 16:59:57Z INFO ActionManager] Action node.js file: dist/index.js.
+[2025-05-04 16:59:57Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2025-05-04 16:59:57Z INFO ExecutionContext] Reserve record order 9 to 16 for post job actions.
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Diag': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_diag'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Diag': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_diag'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Temp': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp'
+[2025-05-04 16:59:57Z INFO ExecutionContext] Write event payload to D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp\_github_workflow\event.json
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Temp': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp'
+[2025-05-04 16:59:57Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2025-05-04 16:59:57Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathFileCommand, Runner.Worker
+[2025-05-04 16:59:57Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvFileCommand, Runner.Worker
+[2025-05-04 16:59:57Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.CreateStepSummaryCommand, Runner.Worker
+[2025-05-04 16:59:57Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateFileCommand, Runner.Worker
+[2025-05-04 16:59:57Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputFileCommand, Runner.Worker
+[2025-05-04 16:59:57Z INFO ActionManifestManager] Input 'repository': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 6,
+  "col": 14,
+  "lit": "bijuthottathil/kubegitactionnew"
+}
+[2025-05-04 16:59:57Z INFO ActionManifestManager] Input 'ref': default value evaluate result: ""
+[2025-05-04 16:59:57Z INFO ActionManifestManager] Input 'token': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 24,
+  "col": 14,
+  "lit": "***"
+}
+[2025-05-04 16:59:57Z INFO ActionManifestManager] Input 'ssh-key': default value evaluate result: ""
+[2025-05-04 16:59:57Z INFO ActionManifestManager] Input 'ssh-known-hosts': default value evaluate result: ""
+[2025-05-04 16:59:57Z INFO ActionManifestManager] Input 'ssh-strict': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 47,
+  "col": 14,
+  "lit": "true"
+}
+[2025-05-04 16:59:57Z INFO ActionManifestManager] Input 'ssh-user': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 51,
+  "col": 14,
+  "lit": "git"
+}
+[2025-05-04 16:59:57Z INFO ActionManifestManager] Input 'persist-credentials': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 54,
+  "col": 14,
+  "lit": "true"
+}
+[2025-05-04 16:59:57Z INFO ActionManifestManager] Input 'path': default value evaluate result: ""
+[2025-05-04 16:59:57Z INFO ActionManifestManager] Input 'clean': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 59,
+  "col": 14,
+  "lit": "true"
+}
+[2025-05-04 16:59:57Z INFO ActionManifestManager] Input 'filter': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 64,
+  "col": 14,
+  "lit": ""
+}
+[2025-05-04 16:59:57Z INFO ActionManifestManager] Input 'sparse-checkout': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 69,
+  "col": 14,
+  "lit": ""
+}
+[2025-05-04 16:59:57Z INFO ActionManifestManager] Input 'sparse-checkout-cone-mode': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 73,
+  "col": 14,
+  "lit": "true"
+}
+[2025-05-04 16:59:57Z INFO ActionManifestManager] Input 'fetch-depth': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 76,
+  "col": 14,
+  "lit": "1"
+}
+[2025-05-04 16:59:57Z INFO ActionManifestManager] Input 'fetch-tags': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 79,
+  "col": 14,
+  "lit": "false"
+}
+[2025-05-04 16:59:57Z INFO ActionManifestManager] Input 'show-progress': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 82,
+  "col": 14,
+  "lit": "true"
+}
+[2025-05-04 16:59:57Z INFO ActionManifestManager] Input 'lfs': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 85,
+  "col": 14,
+  "lit": "false"
+}
+[2025-05-04 16:59:57Z INFO ActionManifestManager] Input 'submodules': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 94,
+  "col": 14,
+  "lit": "false"
+}
+[2025-05-04 16:59:57Z INFO ActionManifestManager] Input 'set-safe-directory': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 97,
+  "col": 14,
+  "lit": "true"
+}
+[2025-05-04 16:59:57Z INFO ActionManifestManager] Input 'github-server-url': default value evaluate result: ""
+[2025-05-04 16:59:57Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2025-05-04 16:59:57Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.InternalPluginSetRepoPathCommandExtension, Runner.Worker
+[2025-05-04 16:59:57Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvCommandExtension, Runner.Worker
+[2025-05-04 16:59:57Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputCommandExtension, Runner.Worker
+[2025-05-04 16:59:57Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateCommandExtension, Runner.Worker
+[2025-05-04 16:59:57Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathCommandExtension, Runner.Worker
+[2025-05-04 16:59:57Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMaskCommandExtension, Runner.Worker
+[2025-05-04 16:59:57Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMatcherCommandExtension, Runner.Worker
+[2025-05-04 16:59:57Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.RemoveMatcherCommandExtension, Runner.Worker
+[2025-05-04 16:59:57Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.WarningCommandExtension, Runner.Worker
+[2025-05-04 16:59:57Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.ErrorCommandExtension, Runner.Worker
+[2025-05-04 16:59:57Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.NoticeCommandExtension, Runner.Worker
+[2025-05-04 16:59:57Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.DebugCommandExtension, Runner.Worker
+[2025-05-04 16:59:57Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.GroupCommandExtension, Runner.Worker
+[2025-05-04 16:59:57Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EndGroupCommandExtension, Runner.Worker
+[2025-05-04 16:59:57Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EchoCommandExtension, Runner.Worker
+[2025-05-04 16:59:57Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2025-05-04 16:59:57Z INFO ActionCommandManager] Register action command extension for command set-env
+[2025-05-04 16:59:57Z INFO ActionCommandManager] Register action command extension for command set-output
+[2025-05-04 16:59:57Z INFO ActionCommandManager] Register action command extension for command save-state
+[2025-05-04 16:59:57Z INFO ActionCommandManager] Register action command extension for command add-path
+[2025-05-04 16:59:57Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2025-05-04 16:59:57Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2025-05-04 16:59:57Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2025-05-04 16:59:57Z INFO ActionCommandManager] Register action command extension for command warning
+[2025-05-04 16:59:57Z INFO ActionCommandManager] Register action command extension for command error
+[2025-05-04 16:59:57Z INFO ActionCommandManager] Register action command extension for command notice
+[2025-05-04 16:59:57Z INFO ActionCommandManager] Register action command extension for command debug
+[2025-05-04 16:59:57Z INFO ActionCommandManager] Register action command extension for command group
+[2025-05-04 16:59:57Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2025-05-04 16:59:57Z INFO ActionCommandManager] Register action command extension for command echo
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:59:57Z INFO HostContext] Well known directory 'Externals': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\externals'
+[2025-05-04 16:59:57Z INFO ProcessInvokerWrapper] Starting process:
+[2025-05-04 16:59:57Z INFO ProcessInvokerWrapper]   File name: 'D:\springboot-GitAction\kubegitactionnew\actions-runner\externals\node20\bin\node.exe'
+[2025-05-04 16:59:57Z INFO ProcessInvokerWrapper]   Arguments: '"D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_actions\actions\checkout\v4\dist/index.js"'
+[2025-05-04 16:59:57Z INFO ProcessInvokerWrapper]   Working directory: 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\kubegitactionnew\kubegitactionnew'
+[2025-05-04 16:59:57Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-05-04 16:59:57Z INFO ProcessInvokerWrapper]   Encoding web name: utf-8 ; code page: '65001'
+[2025-05-04 16:59:57Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-05-04 16:59:57Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-05-04 16:59:57Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-05-04 16:59:57Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-05-04 16:59:57Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-05-04 16:59:57Z INFO ProcessInvokerWrapper] Process started with process id 21176, waiting for process exit.
+[2025-05-04 16:59:58Z INFO JobServerQueue] Try to append 1 batches web console lines for record '27a4b057-3396-4e82-aa6d-be29b3195ccd', success rate: 1/1.
+[2025-05-04 16:59:58Z INFO AddMaskCommandExtension] Add new secret mask with length of 76
+[2025-05-04 16:59:58Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-05-04 16:59:58Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, D:\springboot-GitAction\kubegitactionnew\actions-runner\_diag\blocks\f0120857-345d-4a3f-9574-3e0213a8d467_0c598bc4-6ba9-4124-93d0-83047162f211.1
+[2025-05-04 16:59:58Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2025-05-04 16:59:58Z INFO JobServerQueue] Try to append 1 batches web console lines for record '27a4b057-3396-4e82-aa6d-be29b3195ccd', success rate: 1/1.
+[2025-05-04 16:59:58Z INFO JobServerQueue] Try to append 1 batches web console lines for record '27a4b057-3396-4e82-aa6d-be29b3195ccd', success rate: 1/1.
+[2025-05-04 16:59:58Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2025-05-04 16:59:59Z INFO JobServerQueue] Try to append 1 batches web console lines for record '27a4b057-3396-4e82-aa6d-be29b3195ccd', success rate: 1/1.
+[2025-05-04 16:59:59Z INFO JobServerQueue] Try to append 1 batches web console lines for record '27a4b057-3396-4e82-aa6d-be29b3195ccd', success rate: 1/1.
+[2025-05-04 17:00:00Z INFO JobServerQueue] Try to append 1 batches web console lines for record '27a4b057-3396-4e82-aa6d-be29b3195ccd', success rate: 1/1.
+[2025-05-04 17:00:01Z INFO JobServerQueue] Try to append 1 batches web console lines for record '27a4b057-3396-4e82-aa6d-be29b3195ccd', success rate: 1/1.
+[2025-05-04 17:00:01Z INFO JobServerQueue] Try to append 1 batches web console lines for record '27a4b057-3396-4e82-aa6d-be29b3195ccd', success rate: 1/1.
+[2025-05-04 17:00:03Z INFO JobServerQueue] Try to append 1 batches web console lines for record '27a4b057-3396-4e82-aa6d-be29b3195ccd', success rate: 1/1.
+[2025-05-04 17:00:03Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-04 17:00:03Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-04 17:00:03Z INFO ProcessInvokerWrapper] Finished process 21176 with exit code 0, and elapsed time 00:00:05.2983857.
+[2025-05-04 17:00:03Z INFO CreateStepSummaryCommand] Step Summary file (D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp\_runner_file_commands\step_summary_0908f151-04ac-4bf7-abfe-0b3e7bad1655) is empty; skipping attachment upload
+[2025-05-04 17:00:03Z INFO StepsRunner] Step result: 
+[2025-05-04 17:00:03Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "actions/checkout",
+  "ref": "v4",
+  "type": "node20",
+  "stage": "Main",
+  "stepId": "27a4b057-3396-4e82-aa6d-be29b3195ccd",
+  "stepContextName": "__actions_checkout",
+  "hasPreStep": false,
+  "hasPostStep": true,
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 6,
+  "startTime": "2025-05-04T16:59:57.7702452Z",
+  "finishTime": "2025-05-04T17:00:03.186838Z"
+}.
+[2025-05-04 17:00:03Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2025-05-04 17:00:03Z INFO StepsRunner] Current state: job state = ''
+[2025-05-04 17:00:03Z INFO StepsRunner] Processing step: DisplayName='Show Minikube Status'
+[2025-05-04 17:00:03Z INFO StepsRunner] Evaluating: success()
+[2025-05-04 17:00:03Z INFO StepsRunner] Result: true
+[2025-05-04 17:00:03Z INFO StepsRunner] Starting the step.
+[2025-05-04 17:00:03Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 17:00:03Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 17:00:03Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 17:00:03Z INFO StepsRunner] Which2: 'chcp'
+[2025-05-04 17:00:03Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2025-05-04 17:00:03Z INFO ProcessInvokerWrapper] Starting process:
+[2025-05-04 17:00:03Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2025-05-04 17:00:03Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2025-05-04 17:00:03Z INFO ProcessInvokerWrapper]   Working directory: 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 17:00:03Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-05-04 17:00:03Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-05-04 17:00:03Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-05-04 17:00:03Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-05-04 17:00:03Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-05-04 17:00:03Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-05-04 17:00:03Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-05-04 17:00:03Z INFO ProcessInvokerWrapper] Process started with process id 19816, waiting for process exit.
+[2025-05-04 17:00:03Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-04 17:00:03Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-04 17:00:03Z INFO ProcessInvokerWrapper] Finished process 19816 with exit code 0, and elapsed time 00:00:00.0086203.
+[2025-05-04 17:00:03Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2025-05-04 17:00:03Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 17:00:03Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 17:00:03Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 17:00:03Z INFO HostContext] Well known directory 'Temp': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp'
+[2025-05-04 17:00:03Z INFO ExecutionContext] Write event payload to D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp\_github_workflow\event.json
+[2025-05-04 17:00:03Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 17:00:03Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 17:00:03Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 17:00:03Z INFO HostContext] Well known directory 'Temp': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp'
+[2025-05-04 17:00:03Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2025-05-04 17:00:03Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2025-05-04 17:00:03Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2025-05-04 17:00:03Z INFO ActionCommandManager] Register action command extension for command set-env
+[2025-05-04 17:00:03Z INFO ActionCommandManager] Register action command extension for command set-output
+[2025-05-04 17:00:03Z INFO ActionCommandManager] Register action command extension for command save-state
+[2025-05-04 17:00:03Z INFO ActionCommandManager] Register action command extension for command add-path
+[2025-05-04 17:00:03Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2025-05-04 17:00:03Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2025-05-04 17:00:03Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2025-05-04 17:00:03Z INFO ActionCommandManager] Register action command extension for command warning
+[2025-05-04 17:00:03Z INFO ActionCommandManager] Register action command extension for command error
+[2025-05-04 17:00:03Z INFO ActionCommandManager] Register action command extension for command notice
+[2025-05-04 17:00:03Z INFO ActionCommandManager] Register action command extension for command debug
+[2025-05-04 17:00:03Z INFO ActionCommandManager] Register action command extension for command group
+[2025-05-04 17:00:03Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2025-05-04 17:00:03Z INFO ActionCommandManager] Register action command extension for command echo
+[2025-05-04 17:00:03Z INFO ScriptHandler] Which2: 'pwsh'
+[2025-05-04 17:00:03Z INFO ScriptHandler] pwsh: command not found. Make sure 'pwsh' is installed and its location included in the 'Path' environment variable.
+[2025-05-04 17:00:03Z INFO ScriptHandler] Defaulting to powershell
+[2025-05-04 17:00:03Z INFO ScriptHandler] Which2: 'powershell'
+[2025-05-04 17:00:03Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2025-05-04 17:00:03Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 17:00:03Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 17:00:03Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 17:00:03Z INFO HostContext] Well known directory 'Temp': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp'
+[2025-05-04 17:00:03Z INFO ScriptHandler] Which2: 'pwsh'
+[2025-05-04 17:00:03Z INFO ScriptHandler] pwsh: command not found. Make sure 'pwsh' is installed and its location included in the 'Path' environment variable.
+[2025-05-04 17:00:03Z INFO ScriptHandler] Defaulting to powershell
+[2025-05-04 17:00:03Z INFO ScriptHandler] Which2: 'powershell'
+[2025-05-04 17:00:03Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2025-05-04 17:00:03Z INFO ProcessInvokerWrapper] Starting process:
+[2025-05-04 17:00:03Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2025-05-04 17:00:03Z INFO ProcessInvokerWrapper]   Arguments: '-command ". 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp\f297542c-e45c-4663-80c7-6804ee385bd5.ps1'"'
+[2025-05-04 17:00:03Z INFO ProcessInvokerWrapper]   Working directory: 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\kubegitactionnew\kubegitactionnew'
+[2025-05-04 17:00:03Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-05-04 17:00:03Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-05-04 17:00:03Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-05-04 17:00:03Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-05-04 17:00:03Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-05-04 17:00:03Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-05-04 17:00:03Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-05-04 17:00:03Z INFO ProcessInvokerWrapper] Process started with process id 20076, waiting for process exit.
+[2025-05-04 17:00:03Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2025-05-04 17:00:03Z INFO JobServerQueue] Try to append 1 batches web console lines for record '15ed26d5-b386-49bd-9565-871bd1c484a3', success rate: 1/1.
+[2025-05-04 17:00:03Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-05-04 17:00:03Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, D:\springboot-GitAction\kubegitactionnew\actions-runner\_diag\blocks\f0120857-345d-4a3f-9574-3e0213a8d467_27a4b057-3396-4e82-aa6d-be29b3195ccd.1
+[2025-05-04 17:00:03Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2025-05-04 17:00:04Z INFO JobServerQueue] Try to append 1 batches web console lines for record '15ed26d5-b386-49bd-9565-871bd1c484a3', success rate: 1/1.
+[2025-05-04 17:00:05Z INFO JobServerQueue] Try to append 1 batches web console lines for record '15ed26d5-b386-49bd-9565-871bd1c484a3', success rate: 1/1.
+[2025-05-04 17:00:05Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-04 17:00:05Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-04 17:00:05Z INFO ProcessInvokerWrapper] Finished process 20076 with exit code 0, and elapsed time 00:00:02.1358091.
+[2025-05-04 17:00:05Z INFO CreateStepSummaryCommand] Step Summary file (D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp\_runner_file_commands\step_summary_4482e486-1585-48ac-9130-90ccde90f0bb) is empty; skipping attachment upload
+[2025-05-04 17:00:05Z INFO StepsRunner] Step result: 
+[2025-05-04 17:00:05Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "powershell",
+  "type": "run",
+  "stage": "Main",
+  "stepId": "15ed26d5-b386-49bd-9565-871bd1c484a3",
+  "stepContextName": "__run",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 3,
+  "startTime": "2025-05-04T17:00:03.1941626Z",
+  "finishTime": "2025-05-04T17:00:05.3665129Z"
+}.
+[2025-05-04 17:00:05Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2025-05-04 17:00:05Z INFO StepsRunner] Current state: job state = ''
+[2025-05-04 17:00:05Z INFO StepsRunner] Processing step: DisplayName='Apply Kubernetes Configuration'
+[2025-05-04 17:00:05Z INFO StepsRunner] Evaluating: success()
+[2025-05-04 17:00:05Z INFO StepsRunner] Result: true
+[2025-05-04 17:00:05Z INFO StepsRunner] Starting the step.
+[2025-05-04 17:00:05Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 17:00:05Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 17:00:05Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 17:00:05Z INFO StepsRunner] Which2: 'chcp'
+[2025-05-04 17:00:05Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2025-05-04 17:00:05Z INFO ProcessInvokerWrapper] Starting process:
+[2025-05-04 17:00:05Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2025-05-04 17:00:05Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2025-05-04 17:00:05Z INFO ProcessInvokerWrapper]   Working directory: 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 17:00:05Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-05-04 17:00:05Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-05-04 17:00:05Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-05-04 17:00:05Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-05-04 17:00:05Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-05-04 17:00:05Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-05-04 17:00:05Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-05-04 17:00:05Z INFO ProcessInvokerWrapper] Process started with process id 22168, waiting for process exit.
+[2025-05-04 17:00:05Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-04 17:00:05Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-04 17:00:05Z INFO ProcessInvokerWrapper] Finished process 22168 with exit code 0, and elapsed time 00:00:00.0139907.
+[2025-05-04 17:00:05Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2025-05-04 17:00:05Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 17:00:05Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 17:00:05Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 17:00:05Z INFO HostContext] Well known directory 'Temp': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp'
+[2025-05-04 17:00:05Z INFO ExecutionContext] Write event payload to D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp\_github_workflow\event.json
+[2025-05-04 17:00:05Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 17:00:05Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 17:00:05Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 17:00:05Z INFO HostContext] Well known directory 'Temp': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp'
+[2025-05-04 17:00:05Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2025-05-04 17:00:05Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2025-05-04 17:00:05Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2025-05-04 17:00:05Z INFO ActionCommandManager] Register action command extension for command set-env
+[2025-05-04 17:00:05Z INFO ActionCommandManager] Register action command extension for command set-output
+[2025-05-04 17:00:05Z INFO ActionCommandManager] Register action command extension for command save-state
+[2025-05-04 17:00:05Z INFO ActionCommandManager] Register action command extension for command add-path
+[2025-05-04 17:00:05Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2025-05-04 17:00:05Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2025-05-04 17:00:05Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2025-05-04 17:00:05Z INFO ActionCommandManager] Register action command extension for command warning
+[2025-05-04 17:00:05Z INFO ActionCommandManager] Register action command extension for command error
+[2025-05-04 17:00:05Z INFO ActionCommandManager] Register action command extension for command notice
+[2025-05-04 17:00:05Z INFO ActionCommandManager] Register action command extension for command debug
+[2025-05-04 17:00:05Z INFO ActionCommandManager] Register action command extension for command group
+[2025-05-04 17:00:05Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2025-05-04 17:00:05Z INFO ActionCommandManager] Register action command extension for command echo
+[2025-05-04 17:00:05Z INFO ScriptHandler] Which2: 'pwsh'
+[2025-05-04 17:00:05Z INFO ScriptHandler] pwsh: command not found. Make sure 'pwsh' is installed and its location included in the 'Path' environment variable.
+[2025-05-04 17:00:05Z INFO ScriptHandler] Defaulting to powershell
+[2025-05-04 17:00:05Z INFO ScriptHandler] Which2: 'powershell'
+[2025-05-04 17:00:05Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2025-05-04 17:00:05Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 17:00:05Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 17:00:05Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 17:00:05Z INFO HostContext] Well known directory 'Temp': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp'
+[2025-05-04 17:00:05Z INFO ScriptHandler] Which2: 'pwsh'
+[2025-05-04 17:00:05Z INFO ScriptHandler] pwsh: command not found. Make sure 'pwsh' is installed and its location included in the 'Path' environment variable.
+[2025-05-04 17:00:05Z INFO ScriptHandler] Defaulting to powershell
+[2025-05-04 17:00:05Z INFO ScriptHandler] Which2: 'powershell'
+[2025-05-04 17:00:05Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2025-05-04 17:00:05Z INFO ProcessInvokerWrapper] Starting process:
+[2025-05-04 17:00:05Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2025-05-04 17:00:05Z INFO ProcessInvokerWrapper]   Arguments: '-command ". 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp\273160dd-eb43-417b-8286-2993c82bcdad.ps1'"'
+[2025-05-04 17:00:05Z INFO ProcessInvokerWrapper]   Working directory: 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\kubegitactionnew\kubegitactionnew'
+[2025-05-04 17:00:05Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-05-04 17:00:05Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-05-04 17:00:05Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-05-04 17:00:05Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-05-04 17:00:05Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-05-04 17:00:05Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-05-04 17:00:05Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-05-04 17:00:05Z INFO ProcessInvokerWrapper] Process started with process id 10388, waiting for process exit.
+[2025-05-04 17:00:05Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'b45de126-43e4-4f06-926c-2e835e9fa6d7', success rate: 1/1.
+[2025-05-04 17:00:05Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-05-04 17:00:05Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, D:\springboot-GitAction\kubegitactionnew\actions-runner\_diag\blocks\f0120857-345d-4a3f-9574-3e0213a8d467_15ed26d5-b386-49bd-9565-871bd1c484a3.1
+[2025-05-04 17:00:06Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2025-05-04 17:00:06Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2025-05-04 17:00:07Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'b45de126-43e4-4f06-926c-2e835e9fa6d7', success rate: 1/1.
+[2025-05-04 17:00:07Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-04 17:00:07Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-04 17:00:07Z INFO ProcessInvokerWrapper] Finished process 10388 with exit code 0, and elapsed time 00:00:02.2579013.
+[2025-05-04 17:00:07Z INFO CreateStepSummaryCommand] Step Summary file (D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp\_runner_file_commands\step_summary_487973fe-d114-4ef5-9135-f702ccdbdfb2) is empty; skipping attachment upload
+[2025-05-04 17:00:07Z INFO StepsRunner] Step result: 
+[2025-05-04 17:00:07Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "powershell",
+  "type": "run",
+  "stage": "Main",
+  "stepId": "b45de126-43e4-4f06-926c-2e835e9fa6d7",
+  "stepContextName": "__run_2",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 3,
+  "startTime": "2025-05-04T17:00:05.3681212Z",
+  "finishTime": "2025-05-04T17:00:07.677691Z"
+}.
+[2025-05-04 17:00:07Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2025-05-04 17:00:07Z INFO StepsRunner] Current state: job state = ''
+[2025-05-04 17:00:07Z INFO StepsRunner] Processing step: DisplayName='Execute secret Configuration'
+[2025-05-04 17:00:07Z INFO StepsRunner] Evaluating: success()
+[2025-05-04 17:00:07Z INFO StepsRunner] Result: true
+[2025-05-04 17:00:07Z INFO StepsRunner] Starting the step.
+[2025-05-04 17:00:07Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 17:00:07Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 17:00:07Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 17:00:07Z INFO StepsRunner] Which2: 'chcp'
+[2025-05-04 17:00:07Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2025-05-04 17:00:07Z INFO ProcessInvokerWrapper] Starting process:
+[2025-05-04 17:00:07Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2025-05-04 17:00:07Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2025-05-04 17:00:07Z INFO ProcessInvokerWrapper]   Working directory: 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 17:00:07Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-05-04 17:00:07Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-05-04 17:00:07Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-05-04 17:00:07Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-05-04 17:00:07Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-05-04 17:00:07Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-05-04 17:00:07Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-05-04 17:00:07Z INFO ProcessInvokerWrapper] Process started with process id 17072, waiting for process exit.
+[2025-05-04 17:00:07Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-04 17:00:07Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-04 17:00:07Z INFO ProcessInvokerWrapper] Finished process 17072 with exit code 0, and elapsed time 00:00:00.0182573.
+[2025-05-04 17:00:07Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2025-05-04 17:00:07Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 17:00:07Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 17:00:07Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 17:00:07Z INFO HostContext] Well known directory 'Temp': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp'
+[2025-05-04 17:00:07Z INFO ExecutionContext] Write event payload to D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp\_github_workflow\event.json
+[2025-05-04 17:00:07Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 17:00:07Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 17:00:07Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 17:00:07Z INFO HostContext] Well known directory 'Temp': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp'
+[2025-05-04 17:00:07Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2025-05-04 17:00:07Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2025-05-04 17:00:07Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2025-05-04 17:00:07Z INFO ActionCommandManager] Register action command extension for command set-env
+[2025-05-04 17:00:07Z INFO ActionCommandManager] Register action command extension for command set-output
+[2025-05-04 17:00:07Z INFO ActionCommandManager] Register action command extension for command save-state
+[2025-05-04 17:00:07Z INFO ActionCommandManager] Register action command extension for command add-path
+[2025-05-04 17:00:07Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2025-05-04 17:00:07Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2025-05-04 17:00:07Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2025-05-04 17:00:07Z INFO ActionCommandManager] Register action command extension for command warning
+[2025-05-04 17:00:07Z INFO ActionCommandManager] Register action command extension for command error
+[2025-05-04 17:00:07Z INFO ActionCommandManager] Register action command extension for command notice
+[2025-05-04 17:00:07Z INFO ActionCommandManager] Register action command extension for command debug
+[2025-05-04 17:00:07Z INFO ActionCommandManager] Register action command extension for command group
+[2025-05-04 17:00:07Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2025-05-04 17:00:07Z INFO ActionCommandManager] Register action command extension for command echo
+[2025-05-04 17:00:07Z INFO ScriptHandler] Which2: 'pwsh'
+[2025-05-04 17:00:07Z INFO ScriptHandler] pwsh: command not found. Make sure 'pwsh' is installed and its location included in the 'Path' environment variable.
+[2025-05-04 17:00:07Z INFO ScriptHandler] Defaulting to powershell
+[2025-05-04 17:00:07Z INFO ScriptHandler] Which2: 'powershell'
+[2025-05-04 17:00:07Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2025-05-04 17:00:07Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 17:00:07Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 17:00:07Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 17:00:07Z INFO HostContext] Well known directory 'Temp': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp'
+[2025-05-04 17:00:07Z INFO ScriptHandler] Which2: 'pwsh'
+[2025-05-04 17:00:07Z INFO ScriptHandler] pwsh: command not found. Make sure 'pwsh' is installed and its location included in the 'Path' environment variable.
+[2025-05-04 17:00:07Z INFO ScriptHandler] Defaulting to powershell
+[2025-05-04 17:00:07Z INFO ScriptHandler] Which2: 'powershell'
+[2025-05-04 17:00:07Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2025-05-04 17:00:07Z INFO ProcessInvokerWrapper] Starting process:
+[2025-05-04 17:00:07Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2025-05-04 17:00:07Z INFO ProcessInvokerWrapper]   Arguments: '-command ". 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp\937edf17-937a-47c6-b503-432622610b60.ps1'"'
+[2025-05-04 17:00:07Z INFO ProcessInvokerWrapper]   Working directory: 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\kubegitactionnew\kubegitactionnew'
+[2025-05-04 17:00:07Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-05-04 17:00:07Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-05-04 17:00:07Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-05-04 17:00:07Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-05-04 17:00:07Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-05-04 17:00:07Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-05-04 17:00:07Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-05-04 17:00:07Z INFO ProcessInvokerWrapper] Process started with process id 10120, waiting for process exit.
+[2025-05-04 17:00:07Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 17:00:07Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 17:00:07Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 17:00:07Z INFO JobServerQueue] Try to append 1 batches web console lines for record '10b159b4-37a4-4186-9018-6b640a33e86b', success rate: 1/1.
+[2025-05-04 17:00:08Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-05-04 17:00:08Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, D:\springboot-GitAction\kubegitactionnew\actions-runner\_diag\blocks\f0120857-345d-4a3f-9574-3e0213a8d467_b45de126-43e4-4f06-926c-2e835e9fa6d7.1
+[2025-05-04 17:00:08Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2025-05-04 17:00:08Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2025-05-04 17:00:09Z INFO JobServerQueue] Try to append 1 batches web console lines for record '10b159b4-37a4-4186-9018-6b640a33e86b', success rate: 1/1.
+[2025-05-04 17:00:09Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-04 17:00:09Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-04 17:00:09Z INFO ProcessInvokerWrapper] Finished process 10120 with exit code 0, and elapsed time 00:00:02.2609240.
+[2025-05-04 17:00:09Z INFO CreateStepSummaryCommand] Step Summary file (D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp\_runner_file_commands\step_summary_69a4f40b-3b3f-475d-baa2-1ccf31dbe6ee) is empty; skipping attachment upload
+[2025-05-04 17:00:09Z INFO StepsRunner] Step result: 
+[2025-05-04 17:00:09Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "powershell",
+  "type": "run",
+  "stage": "Main",
+  "stepId": "10b159b4-37a4-4186-9018-6b640a33e86b",
+  "stepContextName": "__run_3",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 3,
+  "startTime": "2025-05-04T17:00:07.6794556Z",
+  "finishTime": "2025-05-04T17:00:09.9974503Z"
+}.
+[2025-05-04 17:00:09Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2025-05-04 17:00:09Z INFO StepsRunner] Current state: job state = ''
+[2025-05-04 17:00:09Z INFO StepsRunner] Processing step: DisplayName='Do Db-Deployment'
+[2025-05-04 17:00:09Z INFO StepsRunner] Evaluating: success()
+[2025-05-04 17:00:09Z INFO StepsRunner] Result: true
+[2025-05-04 17:00:10Z INFO StepsRunner] Starting the step.
+[2025-05-04 17:00:10Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 17:00:10Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 17:00:10Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 17:00:10Z INFO StepsRunner] Which2: 'chcp'
+[2025-05-04 17:00:10Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2025-05-04 17:00:10Z INFO ProcessInvokerWrapper] Starting process:
+[2025-05-04 17:00:10Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2025-05-04 17:00:10Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2025-05-04 17:00:10Z INFO ProcessInvokerWrapper]   Working directory: 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 17:00:10Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-05-04 17:00:10Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-05-04 17:00:10Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-05-04 17:00:10Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-05-04 17:00:10Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-05-04 17:00:10Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-05-04 17:00:10Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-05-04 17:00:10Z INFO ProcessInvokerWrapper] Process started with process id 11212, waiting for process exit.
+[2025-05-04 17:00:10Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-04 17:00:10Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-04 17:00:10Z INFO ProcessInvokerWrapper] Finished process 11212 with exit code 0, and elapsed time 00:00:00.0155258.
+[2025-05-04 17:00:10Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2025-05-04 17:00:10Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 17:00:10Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 17:00:10Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 17:00:10Z INFO HostContext] Well known directory 'Temp': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp'
+[2025-05-04 17:00:10Z INFO ExecutionContext] Write event payload to D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp\_github_workflow\event.json
+[2025-05-04 17:00:10Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 17:00:10Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 17:00:10Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 17:00:10Z INFO HostContext] Well known directory 'Temp': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp'
+[2025-05-04 17:00:10Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2025-05-04 17:00:10Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2025-05-04 17:00:10Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2025-05-04 17:00:10Z INFO ActionCommandManager] Register action command extension for command set-env
+[2025-05-04 17:00:10Z INFO ActionCommandManager] Register action command extension for command set-output
+[2025-05-04 17:00:10Z INFO ActionCommandManager] Register action command extension for command save-state
+[2025-05-04 17:00:10Z INFO ActionCommandManager] Register action command extension for command add-path
+[2025-05-04 17:00:10Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2025-05-04 17:00:10Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2025-05-04 17:00:10Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2025-05-04 17:00:10Z INFO ActionCommandManager] Register action command extension for command warning
+[2025-05-04 17:00:10Z INFO ActionCommandManager] Register action command extension for command error
+[2025-05-04 17:00:10Z INFO ActionCommandManager] Register action command extension for command notice
+[2025-05-04 17:00:10Z INFO ActionCommandManager] Register action command extension for command debug
+[2025-05-04 17:00:10Z INFO ActionCommandManager] Register action command extension for command group
+[2025-05-04 17:00:10Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2025-05-04 17:00:10Z INFO ActionCommandManager] Register action command extension for command echo
+[2025-05-04 17:00:10Z INFO ScriptHandler] Which2: 'pwsh'
+[2025-05-04 17:00:10Z INFO ScriptHandler] pwsh: command not found. Make sure 'pwsh' is installed and its location included in the 'Path' environment variable.
+[2025-05-04 17:00:10Z INFO ScriptHandler] Defaulting to powershell
+[2025-05-04 17:00:10Z INFO ScriptHandler] Which2: 'powershell'
+[2025-05-04 17:00:10Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2025-05-04 17:00:10Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 17:00:10Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 17:00:10Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 17:00:10Z INFO HostContext] Well known directory 'Temp': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp'
+[2025-05-04 17:00:10Z INFO ScriptHandler] Which2: 'pwsh'
+[2025-05-04 17:00:10Z INFO ScriptHandler] pwsh: command not found. Make sure 'pwsh' is installed and its location included in the 'Path' environment variable.
+[2025-05-04 17:00:10Z INFO ScriptHandler] Defaulting to powershell
+[2025-05-04 17:00:10Z INFO ScriptHandler] Which2: 'powershell'
+[2025-05-04 17:00:10Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2025-05-04 17:00:10Z INFO ProcessInvokerWrapper] Starting process:
+[2025-05-04 17:00:10Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2025-05-04 17:00:10Z INFO ProcessInvokerWrapper]   Arguments: '-command ". 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp\44b5e118-84a2-4c62-b7fa-226b800934b0.ps1'"'
+[2025-05-04 17:00:10Z INFO ProcessInvokerWrapper]   Working directory: 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\kubegitactionnew\kubegitactionnew'
+[2025-05-04 17:00:10Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-05-04 17:00:10Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-05-04 17:00:10Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-05-04 17:00:10Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-05-04 17:00:10Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-05-04 17:00:10Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-05-04 17:00:10Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-05-04 17:00:10Z INFO ProcessInvokerWrapper] Process started with process id 10068, waiting for process exit.
+[2025-05-04 17:00:10Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'd714407c-de67-4d63-b3ed-9b08a5839216', success rate: 1/1.
+[2025-05-04 17:00:10Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2025-05-04 17:00:10Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-05-04 17:00:10Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, D:\springboot-GitAction\kubegitactionnew\actions-runner\_diag\blocks\f0120857-345d-4a3f-9574-3e0213a8d467_10b159b4-37a4-4186-9018-6b640a33e86b.1
+[2025-05-04 17:00:10Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2025-05-04 17:00:11Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'd714407c-de67-4d63-b3ed-9b08a5839216', success rate: 1/1.
+[2025-05-04 17:00:12Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'd714407c-de67-4d63-b3ed-9b08a5839216', success rate: 1/1.
+[2025-05-04 17:00:12Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-04 17:00:12Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-04 17:00:12Z INFO ProcessInvokerWrapper] Finished process 10068 with exit code 0, and elapsed time 00:00:02.2255439.
+[2025-05-04 17:00:12Z INFO CreateStepSummaryCommand] Step Summary file (D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp\_runner_file_commands\step_summary_5897fe37-d760-4a04-b6f4-b082e9be6ee5) is empty; skipping attachment upload
+[2025-05-04 17:00:12Z INFO StepsRunner] Step result: 
+[2025-05-04 17:00:12Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "powershell",
+  "type": "run",
+  "stage": "Main",
+  "stepId": "d714407c-de67-4d63-b3ed-9b08a5839216",
+  "stepContextName": "__run_4",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 3,
+  "startTime": "2025-05-04T17:00:09.9994758Z",
+  "finishTime": "2025-05-04T17:00:12.2704815Z"
+}.
+[2025-05-04 17:00:12Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2025-05-04 17:00:12Z INFO StepsRunner] Current state: job state = ''
+[2025-05-04 17:00:12Z INFO StepsRunner] Processing step: DisplayName='Do App-Deployment'
+[2025-05-04 17:00:12Z INFO StepsRunner] Evaluating: success()
+[2025-05-04 17:00:12Z INFO StepsRunner] Result: true
+[2025-05-04 17:00:12Z INFO StepsRunner] Starting the step.
+[2025-05-04 17:00:12Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 17:00:12Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 17:00:12Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 17:00:12Z INFO StepsRunner] Which2: 'chcp'
+[2025-05-04 17:00:12Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2025-05-04 17:00:12Z INFO ProcessInvokerWrapper] Starting process:
+[2025-05-04 17:00:12Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2025-05-04 17:00:12Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2025-05-04 17:00:12Z INFO ProcessInvokerWrapper]   Working directory: 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 17:00:12Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-05-04 17:00:12Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-05-04 17:00:12Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-05-04 17:00:12Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-05-04 17:00:12Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-05-04 17:00:12Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-05-04 17:00:12Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-05-04 17:00:12Z INFO ProcessInvokerWrapper] Process started with process id 9988, waiting for process exit.
+[2025-05-04 17:00:12Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-04 17:00:12Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-04 17:00:12Z INFO ProcessInvokerWrapper] Finished process 9988 with exit code 0, and elapsed time 00:00:00.0109375.
+[2025-05-04 17:00:12Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2025-05-04 17:00:12Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 17:00:12Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 17:00:12Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 17:00:12Z INFO HostContext] Well known directory 'Temp': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp'
+[2025-05-04 17:00:12Z INFO ExecutionContext] Write event payload to D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp\_github_workflow\event.json
+[2025-05-04 17:00:12Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 17:00:12Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 17:00:12Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 17:00:12Z INFO HostContext] Well known directory 'Temp': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp'
+[2025-05-04 17:00:12Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2025-05-04 17:00:12Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2025-05-04 17:00:12Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2025-05-04 17:00:12Z INFO ActionCommandManager] Register action command extension for command set-env
+[2025-05-04 17:00:12Z INFO ActionCommandManager] Register action command extension for command set-output
+[2025-05-04 17:00:12Z INFO ActionCommandManager] Register action command extension for command save-state
+[2025-05-04 17:00:12Z INFO ActionCommandManager] Register action command extension for command add-path
+[2025-05-04 17:00:12Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2025-05-04 17:00:12Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2025-05-04 17:00:12Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2025-05-04 17:00:12Z INFO ActionCommandManager] Register action command extension for command warning
+[2025-05-04 17:00:12Z INFO ActionCommandManager] Register action command extension for command error
+[2025-05-04 17:00:12Z INFO ActionCommandManager] Register action command extension for command notice
+[2025-05-04 17:00:12Z INFO ActionCommandManager] Register action command extension for command debug
+[2025-05-04 17:00:12Z INFO ActionCommandManager] Register action command extension for command group
+[2025-05-04 17:00:12Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2025-05-04 17:00:12Z INFO ActionCommandManager] Register action command extension for command echo
+[2025-05-04 17:00:12Z INFO ScriptHandler] Which2: 'pwsh'
+[2025-05-04 17:00:12Z INFO ScriptHandler] pwsh: command not found. Make sure 'pwsh' is installed and its location included in the 'Path' environment variable.
+[2025-05-04 17:00:12Z INFO ScriptHandler] Defaulting to powershell
+[2025-05-04 17:00:12Z INFO ScriptHandler] Which2: 'powershell'
+[2025-05-04 17:00:12Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2025-05-04 17:00:12Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 17:00:12Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 17:00:12Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 17:00:12Z INFO HostContext] Well known directory 'Temp': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp'
+[2025-05-04 17:00:12Z INFO ScriptHandler] Which2: 'pwsh'
+[2025-05-04 17:00:12Z INFO ScriptHandler] pwsh: command not found. Make sure 'pwsh' is installed and its location included in the 'Path' environment variable.
+[2025-05-04 17:00:12Z INFO ScriptHandler] Defaulting to powershell
+[2025-05-04 17:00:12Z INFO ScriptHandler] Which2: 'powershell'
+[2025-05-04 17:00:12Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2025-05-04 17:00:12Z INFO ProcessInvokerWrapper] Starting process:
+[2025-05-04 17:00:12Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2025-05-04 17:00:12Z INFO ProcessInvokerWrapper]   Arguments: '-command ". 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp\bc543803-b23c-4e90-b414-1dafbfb34f8c.ps1'"'
+[2025-05-04 17:00:12Z INFO ProcessInvokerWrapper]   Working directory: 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\kubegitactionnew\kubegitactionnew'
+[2025-05-04 17:00:12Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-05-04 17:00:12Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-05-04 17:00:12Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-05-04 17:00:12Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-05-04 17:00:12Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-05-04 17:00:12Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-05-04 17:00:12Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-05-04 17:00:12Z INFO ProcessInvokerWrapper] Process started with process id 13176, waiting for process exit.
+[2025-05-04 17:00:12Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2025-05-04 17:00:12Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'a226ce68-4276-46df-8632-cb1dd855fde9', success rate: 1/1.
+[2025-05-04 17:00:12Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-05-04 17:00:12Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, D:\springboot-GitAction\kubegitactionnew\actions-runner\_diag\blocks\f0120857-345d-4a3f-9574-3e0213a8d467_d714407c-de67-4d63-b3ed-9b08a5839216.1
+[2025-05-04 17:00:12Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2025-05-04 17:00:13Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'a226ce68-4276-46df-8632-cb1dd855fde9', success rate: 1/1.
+[2025-05-04 17:00:14Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-04 17:00:14Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-04 17:00:14Z INFO ProcessInvokerWrapper] Finished process 13176 with exit code 0, and elapsed time 00:00:01.7026057.
+[2025-05-04 17:00:14Z INFO CreateStepSummaryCommand] Step Summary file (D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp\_runner_file_commands\step_summary_f3d0422f-4475-4fcd-bc2e-ef2ee137e511) is empty; skipping attachment upload
+[2025-05-04 17:00:14Z INFO StepsRunner] Step result: 
+[2025-05-04 17:00:14Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "powershell",
+  "type": "run",
+  "stage": "Main",
+  "stepId": "a226ce68-4276-46df-8632-cb1dd855fde9",
+  "stepContextName": "__run_5",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 2,
+  "startTime": "2025-05-04T17:00:12.271652Z",
+  "finishTime": "2025-05-04T17:00:14.0108286Z"
+}.
+[2025-05-04 17:00:14Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2025-05-04 17:00:14Z INFO StepsRunner] Current state: job state = ''
+[2025-05-04 17:00:14Z INFO StepsRunner] Processing step: DisplayName='Verify Pod Status'
+[2025-05-04 17:00:14Z INFO StepsRunner] Evaluating: success()
+[2025-05-04 17:00:14Z INFO StepsRunner] Result: true
+[2025-05-04 17:00:14Z INFO StepsRunner] Starting the step.
+[2025-05-04 17:00:14Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 17:00:14Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 17:00:14Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 17:00:14Z INFO StepsRunner] Which2: 'chcp'
+[2025-05-04 17:00:14Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2025-05-04 17:00:14Z INFO ProcessInvokerWrapper] Starting process:
+[2025-05-04 17:00:14Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2025-05-04 17:00:14Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2025-05-04 17:00:14Z INFO ProcessInvokerWrapper]   Working directory: 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 17:00:14Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-05-04 17:00:14Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-05-04 17:00:14Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-05-04 17:00:14Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-05-04 17:00:14Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-05-04 17:00:14Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-05-04 17:00:14Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-05-04 17:00:14Z INFO ProcessInvokerWrapper] Process started with process id 21576, waiting for process exit.
+[2025-05-04 17:00:14Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-04 17:00:14Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-04 17:00:14Z INFO ProcessInvokerWrapper] Finished process 21576 with exit code 0, and elapsed time 00:00:00.0171268.
+[2025-05-04 17:00:14Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2025-05-04 17:00:14Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 17:00:14Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 17:00:14Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 17:00:14Z INFO HostContext] Well known directory 'Temp': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp'
+[2025-05-04 17:00:14Z INFO ExecutionContext] Write event payload to D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp\_github_workflow\event.json
+[2025-05-04 17:00:14Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 17:00:14Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 17:00:14Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 17:00:14Z INFO HostContext] Well known directory 'Temp': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp'
+[2025-05-04 17:00:14Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2025-05-04 17:00:14Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2025-05-04 17:00:14Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2025-05-04 17:00:14Z INFO ActionCommandManager] Register action command extension for command set-env
+[2025-05-04 17:00:14Z INFO ActionCommandManager] Register action command extension for command set-output
+[2025-05-04 17:00:14Z INFO ActionCommandManager] Register action command extension for command save-state
+[2025-05-04 17:00:14Z INFO ActionCommandManager] Register action command extension for command add-path
+[2025-05-04 17:00:14Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2025-05-04 17:00:14Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2025-05-04 17:00:14Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2025-05-04 17:00:14Z INFO ActionCommandManager] Register action command extension for command warning
+[2025-05-04 17:00:14Z INFO ActionCommandManager] Register action command extension for command error
+[2025-05-04 17:00:14Z INFO ActionCommandManager] Register action command extension for command notice
+[2025-05-04 17:00:14Z INFO ActionCommandManager] Register action command extension for command debug
+[2025-05-04 17:00:14Z INFO ActionCommandManager] Register action command extension for command group
+[2025-05-04 17:00:14Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2025-05-04 17:00:14Z INFO ActionCommandManager] Register action command extension for command echo
+[2025-05-04 17:00:14Z INFO ScriptHandler] Which2: 'pwsh'
+[2025-05-04 17:00:14Z INFO ScriptHandler] pwsh: command not found. Make sure 'pwsh' is installed and its location included in the 'Path' environment variable.
+[2025-05-04 17:00:14Z INFO ScriptHandler] Defaulting to powershell
+[2025-05-04 17:00:14Z INFO ScriptHandler] Which2: 'powershell'
+[2025-05-04 17:00:14Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2025-05-04 17:00:14Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 17:00:14Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 17:00:14Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 17:00:14Z INFO HostContext] Well known directory 'Temp': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp'
+[2025-05-04 17:00:14Z INFO ScriptHandler] Which2: 'pwsh'
+[2025-05-04 17:00:14Z INFO ScriptHandler] pwsh: command not found. Make sure 'pwsh' is installed and its location included in the 'Path' environment variable.
+[2025-05-04 17:00:14Z INFO ScriptHandler] Defaulting to powershell
+[2025-05-04 17:00:14Z INFO ScriptHandler] Which2: 'powershell'
+[2025-05-04 17:00:14Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2025-05-04 17:00:14Z INFO ProcessInvokerWrapper] Starting process:
+[2025-05-04 17:00:14Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2025-05-04 17:00:14Z INFO ProcessInvokerWrapper]   Arguments: '-command ". 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp\4b9d7625-30bb-4e3d-8e6e-2866a283dc2e.ps1'"'
+[2025-05-04 17:00:14Z INFO ProcessInvokerWrapper]   Working directory: 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\kubegitactionnew\kubegitactionnew'
+[2025-05-04 17:00:14Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-05-04 17:00:14Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-05-04 17:00:14Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-05-04 17:00:14Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-05-04 17:00:14Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-05-04 17:00:14Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-05-04 17:00:14Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-05-04 17:00:14Z INFO ProcessInvokerWrapper] Process started with process id 21748, waiting for process exit.
+[2025-05-04 17:00:14Z INFO JobServerQueue] Try to append 1 batches web console lines for record '5b44c466-189a-4f7c-8c69-4de292a422b5', success rate: 1/1.
+[2025-05-04 17:00:14Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2025-05-04 17:00:14Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-05-04 17:00:14Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, D:\springboot-GitAction\kubegitactionnew\actions-runner\_diag\blocks\f0120857-345d-4a3f-9574-3e0213a8d467_a226ce68-4276-46df-8632-cb1dd855fde9.1
+[2025-05-04 17:00:15Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2025-05-04 17:00:16Z INFO JobServerQueue] Try to append 1 batches web console lines for record '5b44c466-189a-4f7c-8c69-4de292a422b5', success rate: 1/1.
+[2025-05-04 17:00:16Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-04 17:00:16Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-04 17:00:16Z INFO ProcessInvokerWrapper] Finished process 21748 with exit code 0, and elapsed time 00:00:02.2173800.
+[2025-05-04 17:00:16Z INFO CreateStepSummaryCommand] Step Summary file (D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp\_runner_file_commands\step_summary_6b951a1d-cbc1-4a8e-b7e8-687fd9a2df6a) is empty; skipping attachment upload
+[2025-05-04 17:00:16Z INFO StepsRunner] Step result: 
+[2025-05-04 17:00:16Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "powershell",
+  "type": "run",
+  "stage": "Main",
+  "stepId": "5b44c466-189a-4f7c-8c69-4de292a422b5",
+  "stepContextName": "__run_6",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 3,
+  "startTime": "2025-05-04T17:00:14.0117442Z",
+  "finishTime": "2025-05-04T17:00:16.2759282Z"
+}.
+[2025-05-04 17:00:16Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2025-05-04 17:00:16Z INFO StepsRunner] Current state: job state = ''
+[2025-05-04 17:00:16Z INFO StepsRunner] Processing step: DisplayName='Post Checkout code'
+[2025-05-04 17:00:16Z INFO StepsRunner] Evaluating: always()
+[2025-05-04 17:00:16Z INFO StepsRunner] Result: true
+[2025-05-04 17:00:16Z INFO StepsRunner] Starting the step.
+[2025-05-04 17:00:16Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 17:00:16Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 17:00:16Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 17:00:16Z INFO StepsRunner] Which2: 'chcp'
+[2025-05-04 17:00:16Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2025-05-04 17:00:16Z INFO ProcessInvokerWrapper] Starting process:
+[2025-05-04 17:00:16Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2025-05-04 17:00:16Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2025-05-04 17:00:16Z INFO ProcessInvokerWrapper]   Working directory: 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 17:00:16Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-05-04 17:00:16Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-05-04 17:00:16Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-05-04 17:00:16Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-05-04 17:00:16Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-05-04 17:00:16Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-05-04 17:00:16Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-05-04 17:00:16Z INFO ProcessInvokerWrapper] Process started with process id 7372, waiting for process exit.
+[2025-05-04 17:00:16Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-04 17:00:16Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-04 17:00:16Z INFO ProcessInvokerWrapper] Finished process 7372 with exit code 0, and elapsed time 00:00:00.0150596.
+[2025-05-04 17:00:16Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2025-05-04 17:00:16Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 17:00:16Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 17:00:16Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 17:00:16Z INFO HostContext] Well known directory 'Actions': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_actions'
+[2025-05-04 17:00:16Z INFO ActionManager] Load action that reference repository from 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_actions\actions\checkout\v4'
+[2025-05-04 17:00:16Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 17:00:16Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 17:00:16Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 17:00:16Z INFO HostContext] Well known directory 'Actions': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_actions'
+[2025-05-04 17:00:16Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "ssh-user"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 14,
+          "lit": "git"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 52,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 54,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 57,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 3,
+          "lit": "filter"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 64,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 69,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 76,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 77,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 79,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 80,
+          "col": 3,
+          "lit": "show-progress"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 83,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 85,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 86,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 94,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 95,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 97,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 98,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node20",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2025-05-04 17:00:16Z INFO ActionManager] Action pre node.js file: N/A.
+[2025-05-04 17:00:16Z INFO ActionManager] Action node.js file: dist/index.js.
+[2025-05-04 17:00:16Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2025-05-04 17:00:16Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 17:00:16Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 17:00:16Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 17:00:16Z INFO HostContext] Well known directory 'Temp': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp'
+[2025-05-04 17:00:16Z INFO ExecutionContext] Write event payload to D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp\_github_workflow\event.json
+[2025-05-04 17:00:16Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 17:00:16Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 17:00:16Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 17:00:16Z INFO HostContext] Well known directory 'Temp': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp'
+[2025-05-04 17:00:16Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2025-05-04 17:00:16Z INFO ActionManifestManager] Input 'repository': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 6,
+  "col": 14,
+  "lit": "bijuthottathil/kubegitactionnew"
+}
+[2025-05-04 17:00:16Z INFO ActionManifestManager] Input 'ref': default value evaluate result: ""
+[2025-05-04 17:00:16Z INFO ActionManifestManager] Input 'token': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 24,
+  "col": 14,
+  "lit": "***"
+}
+[2025-05-04 17:00:16Z INFO ActionManifestManager] Input 'ssh-key': default value evaluate result: ""
+[2025-05-04 17:00:16Z INFO ActionManifestManager] Input 'ssh-known-hosts': default value evaluate result: ""
+[2025-05-04 17:00:16Z INFO ActionManifestManager] Input 'ssh-strict': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 47,
+  "col": 14,
+  "lit": "true"
+}
+[2025-05-04 17:00:16Z INFO ActionManifestManager] Input 'ssh-user': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 51,
+  "col": 14,
+  "lit": "git"
+}
+[2025-05-04 17:00:16Z INFO ActionManifestManager] Input 'persist-credentials': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 54,
+  "col": 14,
+  "lit": "true"
+}
+[2025-05-04 17:00:16Z INFO ActionManifestManager] Input 'path': default value evaluate result: ""
+[2025-05-04 17:00:16Z INFO ActionManifestManager] Input 'clean': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 59,
+  "col": 14,
+  "lit": "true"
+}
+[2025-05-04 17:00:16Z INFO ActionManifestManager] Input 'filter': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 64,
+  "col": 14,
+  "lit": ""
+}
+[2025-05-04 17:00:16Z INFO ActionManifestManager] Input 'sparse-checkout': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 69,
+  "col": 14,
+  "lit": ""
+}
+[2025-05-04 17:00:16Z INFO ActionManifestManager] Input 'sparse-checkout-cone-mode': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 73,
+  "col": 14,
+  "lit": "true"
+}
+[2025-05-04 17:00:16Z INFO ActionManifestManager] Input 'fetch-depth': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 76,
+  "col": 14,
+  "lit": "1"
+}
+[2025-05-04 17:00:16Z INFO ActionManifestManager] Input 'fetch-tags': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 79,
+  "col": 14,
+  "lit": "false"
+}
+[2025-05-04 17:00:16Z INFO ActionManifestManager] Input 'show-progress': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 82,
+  "col": 14,
+  "lit": "true"
+}
+[2025-05-04 17:00:16Z INFO ActionManifestManager] Input 'lfs': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 85,
+  "col": 14,
+  "lit": "false"
+}
+[2025-05-04 17:00:16Z INFO ActionManifestManager] Input 'submodules': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 94,
+  "col": 14,
+  "lit": "false"
+}
+[2025-05-04 17:00:16Z INFO ActionManifestManager] Input 'set-safe-directory': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 97,
+  "col": 14,
+  "lit": "true"
+}
+[2025-05-04 17:00:16Z INFO ActionManifestManager] Input 'github-server-url': default value evaluate result: ""
+[2025-05-04 17:00:16Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2025-05-04 17:00:16Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2025-05-04 17:00:16Z INFO ActionCommandManager] Register action command extension for command set-env
+[2025-05-04 17:00:16Z INFO ActionCommandManager] Register action command extension for command set-output
+[2025-05-04 17:00:16Z INFO ActionCommandManager] Register action command extension for command save-state
+[2025-05-04 17:00:16Z INFO ActionCommandManager] Register action command extension for command add-path
+[2025-05-04 17:00:16Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2025-05-04 17:00:16Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2025-05-04 17:00:16Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2025-05-04 17:00:16Z INFO ActionCommandManager] Register action command extension for command warning
+[2025-05-04 17:00:16Z INFO ActionCommandManager] Register action command extension for command error
+[2025-05-04 17:00:16Z INFO ActionCommandManager] Register action command extension for command notice
+[2025-05-04 17:00:16Z INFO ActionCommandManager] Register action command extension for command debug
+[2025-05-04 17:00:16Z INFO ActionCommandManager] Register action command extension for command group
+[2025-05-04 17:00:16Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2025-05-04 17:00:16Z INFO ActionCommandManager] Register action command extension for command echo
+[2025-05-04 17:00:16Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 17:00:16Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 17:00:16Z INFO HostContext] Well known directory 'Externals': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\externals'
+[2025-05-04 17:00:16Z INFO ProcessInvokerWrapper] Starting process:
+[2025-05-04 17:00:16Z INFO ProcessInvokerWrapper]   File name: 'D:\springboot-GitAction\kubegitactionnew\actions-runner\externals\node20\bin\node.exe'
+[2025-05-04 17:00:16Z INFO ProcessInvokerWrapper]   Arguments: '"D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_actions\actions\checkout\v4\dist/index.js"'
+[2025-05-04 17:00:16Z INFO ProcessInvokerWrapper]   Working directory: 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\kubegitactionnew\kubegitactionnew'
+[2025-05-04 17:00:16Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-05-04 17:00:16Z INFO ProcessInvokerWrapper]   Encoding web name: utf-8 ; code page: '65001'
+[2025-05-04 17:00:16Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-05-04 17:00:16Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-05-04 17:00:16Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-05-04 17:00:16Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-05-04 17:00:16Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-05-04 17:00:16Z INFO ProcessInvokerWrapper] Process started with process id 11884, waiting for process exit.
+[2025-05-04 17:00:16Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2025-05-04 17:00:16Z INFO JobServerQueue] Try to append 1 batches web console lines for record '91e19d0d-ee5c-406e-8117-c8b8fd8bf125', success rate: 1/1.
+[2025-05-04 17:00:16Z INFO AddMaskCommandExtension] Add new secret mask with length of 32
+[2025-05-04 17:00:16Z INFO JobServerQueue] Try to append 1 batches web console lines for record '91e19d0d-ee5c-406e-8117-c8b8fd8bf125', success rate: 1/1.
+[2025-05-04 17:00:17Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-05-04 17:00:17Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, D:\springboot-GitAction\kubegitactionnew\actions-runner\_diag\blocks\f0120857-345d-4a3f-9574-3e0213a8d467_5b44c466-189a-4f7c-8c69-4de292a422b5.1
+[2025-05-04 17:00:17Z INFO JobServerQueue] Try to append 1 batches web console lines for record '91e19d0d-ee5c-406e-8117-c8b8fd8bf125', success rate: 1/1.
+[2025-05-04 17:00:17Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2025-05-04 17:00:17Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 17:00:17Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 17:00:17Z INFO HostContext] Well known directory 'Work': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_work'
+[2025-05-04 17:00:18Z INFO JobServerQueue] Try to append 1 batches web console lines for record '91e19d0d-ee5c-406e-8117-c8b8fd8bf125', success rate: 1/1.
+[2025-05-04 17:00:18Z INFO JobServerQueue] Try to append 1 batches web console lines for record '91e19d0d-ee5c-406e-8117-c8b8fd8bf125', success rate: 1/1.
+[2025-05-04 17:00:19Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-04 17:00:19Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-04 17:00:19Z INFO ProcessInvokerWrapper] Finished process 11884 with exit code 0, and elapsed time 00:00:02.9450117.
+[2025-05-04 17:00:19Z INFO CreateStepSummaryCommand] Step Summary file (D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp\_runner_file_commands\step_summary_a1e0b5a2-dd16-420a-84b9-4af17a153247) is empty; skipping attachment upload
+[2025-05-04 17:00:19Z INFO StepsRunner] Step result: 
+[2025-05-04 17:00:19Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "actions/checkout",
+  "ref": "v4",
+  "type": "node20",
+  "stage": "Post",
+  "stepId": "91e19d0d-ee5c-406e-8117-c8b8fd8bf125",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 3,
+  "startTime": "2025-05-04T17:00:16.2775528Z",
+  "finishTime": "2025-05-04T17:00:19.2596691Z"
+}.
+[2025-05-04 17:00:19Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2025-05-04 17:00:19Z INFO StepsRunner] Current state: job state = ''
+[2025-05-04 17:00:19Z INFO JobRunner] Finalize job.
+[2025-05-04 17:00:19Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 17:00:19Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 17:00:19Z INFO HostContext] Well known directory 'Diag': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_diag'
+[2025-05-04 17:00:19Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 17:00:19Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 17:00:19Z INFO HostContext] Well known directory 'Diag': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_diag'
+[2025-05-04 17:00:19Z INFO JobExtension] Initialize Env context
+[2025-05-04 17:00:19Z INFO JobExtension] Initialize steps context
+[2025-05-04 17:00:19Z INFO JobExtension] Total accessible running process: 323.
+[2025-05-04 17:00:19Z INFO JobExtension] Inspecting process environment variables. PID: 21868 (SearchProtocolHost)
+[2025-05-04 17:00:19Z WARN JobExtension] Ignore exception during read process environment variables: Access is denied.
+[2025-05-04 17:00:19Z INFO JobExtension] Inspecting process environment variables. PID: 9212 (docker)
+[2025-05-04 17:00:19Z INFO JobExtension] Inspecting process environment variables. PID: 21132 (conhost)
+[2025-05-04 17:00:19Z INFO JobExtension] Inspecting process environment variables. PID: 21840 (docker)
+[2025-05-04 17:00:19Z INFO JobExtension] Inspecting process environment variables. PID: 21176 (conhost)
+[2025-05-04 17:00:19Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "complete_job",
+  "type": "runner",
+  "stage": "Post",
+  "stepId": "bf1c7717-6ee6-4aff-a162-95708950b8e8",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 1,
+  "startTime": "2025-05-04T17:00:19.2666426Z",
+  "finishTime": "2025-05-04T17:00:19.322117Z"
+}.
+[2025-05-04 17:00:19Z INFO JobRunner] Job result after all job steps finish: Succeeded
+[2025-05-04 17:00:19Z INFO JobRunner] Completing the job execution context.
+[2025-05-04 17:00:19Z INFO JobRunner] Shutting down the job server queue.
+[2025-05-04 17:00:19Z INFO JobServerQueue] Fire signal to shutdown all queues.
+[2025-05-04 17:00:20Z INFO JobServerQueue] All queue process task stopped.
+[2025-05-04 17:00:20Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'bf1c7717-6ee6-4aff-a162-95708950b8e8', success rate: 1/1.
+[2025-05-04 17:00:20Z INFO JobServerQueue] Web console line queue drained.
+[2025-05-04 17:00:20Z INFO JobServerQueue] Uploading 3 files in one shot.
+[2025-05-04 17:00:20Z INFO JobServerQueue] Try to upload 3 log files or attachments, success rate: 3/3.
+[2025-05-04 17:00:20Z INFO JobServerQueue] File upload queue drained.
+[2025-05-04 17:00:20Z INFO JobServerQueue] Starting results-based upload queue...
+[2025-05-04 17:00:20Z INFO JobServerQueue] Uploading 3 file(s) in one shot through results service.
+[2025-05-04 17:00:20Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-05-04 17:00:20Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, D:\springboot-GitAction\kubegitactionnew\actions-runner\_diag\blocks\f0120857-345d-4a3f-9574-3e0213a8d467_91e19d0d-ee5c-406e-8117-c8b8fd8bf125.1
+[2025-05-04 17:00:20Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-05-04 17:00:20Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, D:\springboot-GitAction\kubegitactionnew\actions-runner\_diag\blocks\f0120857-345d-4a3f-9574-3e0213a8d467_bf1c7717-6ee6-4aff-a162-95708950b8e8.1
+[2025-05-04 17:00:20Z INFO JobServerQueue] Got a job log file to send to results service.
+[2025-05-04 17:00:20Z INFO JobServerQueue] Starting upload of job log file to results service ResultsLog, D:\springboot-GitAction\kubegitactionnew\actions-runner\_diag\blocks\f0120857-345d-4a3f-9574-3e0213a8d467_f43e1860-7014-5e21-b3db-d425795b334b.1
+[2025-05-04 17:00:20Z INFO JobServerQueue] Tried to upload 3 file(s) to results, success rate: 3/3.
+[2025-05-04 17:00:20Z INFO JobServerQueue] Results upload queue drained.
+[2025-05-04 17:00:20Z INFO JobServerQueue] Timeline update queue drained.
+[2025-05-04 17:00:20Z INFO JobServerQueue] Disposing job server ...
+[2025-05-04 17:00:20Z INFO JobServerQueue] Disposing results server ...
+[2025-05-04 17:00:20Z INFO JobServerQueue] All queue process tasks have been stopped, and all queues are drained.
+[2025-05-04 17:00:20Z INFO TempDirectoryManager] Cleaning runner temp folder: D:\springboot-GitAction\kubegitactionnew\actions-runner\_work\_temp
+[2025-05-04 17:00:20Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 17:00:20Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 17:00:20Z INFO HostContext] Well known directory 'Diag': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_diag'
+[2025-05-04 17:00:20Z INFO HostContext] Well known config file 'Telemetry': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\_diag\.telemetry'
+[2025-05-04 17:00:20Z INFO JobRunner] Raising job completed against run service
+[2025-05-04 17:00:21Z INFO Worker] Job completed.

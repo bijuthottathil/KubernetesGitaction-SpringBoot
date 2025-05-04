@@ -14,10 +14,10 @@ jobs:
       run: |
         minikube status
         kubectl config current-context
-    - name: Apply Kubernetes Configuration
+    - name: Apply MySQL DB Configuration
       run: |
         kubectl apply -f db-config.yaml
-    - name: Execute secret Configuration
+    - name: Execute Secret Configuration
       run: |
         kubectl apply -f mysql-secrets.yaml
     - name: Do Db-Deployment
