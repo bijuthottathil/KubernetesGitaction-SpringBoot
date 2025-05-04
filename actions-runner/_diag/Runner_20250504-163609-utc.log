@@ -1,0 +1,167 @@
+[2025-05-04 16:36:09Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2025-05-04 16:36:09Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:36:09Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:36:09Z INFO HostContext] Well known config file 'Credentials': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\.credentials'
+[2025-05-04 16:36:09Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:36:09Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:36:09Z INFO HostContext] Well known config file 'Runner': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\.runner'
+[2025-05-04 16:36:09Z INFO Listener] Runner is built for Windows (X64) - win-x64.
+[2025-05-04 16:36:09Z INFO Listener] RuntimeInformation: Microsoft Windows 10.0.26100.
+[2025-05-04 16:36:09Z INFO Listener] Version: 2.323.0
+[2025-05-04 16:36:09Z INFO Listener] Commit: d8b82f44a9ec0258904d5869ae683c31d5aac299
+[2025-05-04 16:36:09Z INFO Listener] Culture: en-US
+[2025-05-04 16:36:09Z INFO Listener] UI Culture: en-US
+[2025-05-04 16:36:09Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:36:09Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:36:09Z INFO Listener] Validating directory permissions for: 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:36:09Z INFO CommandLineParser] Parse
+[2025-05-04 16:36:09Z INFO CommandLineParser] Parsing 1 args
+[2025-05-04 16:36:09Z INFO CommandLineParser] parsing argument
+[2025-05-04 16:36:09Z INFO CommandLineParser] HasArgs: False
+[2025-05-04 16:36:09Z INFO CommandLineParser] Adding Command: run
+[2025-05-04 16:36:09Z INFO Listener] Arguments parsed
+[2025-05-04 16:36:09Z INFO Runner] ExecuteCommand
+[2025-05-04 16:36:09Z INFO ConfigurationStore] currentAssemblyLocation: D:\springboot-GitAction\kubegitactionnew\actions-runner\bin\Runner.Listener.dll
+[2025-05-04 16:36:09Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:36:09Z INFO ConfigurationStore] binPath: D:\springboot-GitAction\kubegitactionnew\actions-runner\bin
+[2025-05-04 16:36:09Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:36:09Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:36:09Z INFO ConfigurationStore] RootFolder: D:\springboot-GitAction\kubegitactionnew\actions-runner
+[2025-05-04 16:36:09Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:36:09Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:36:09Z INFO HostContext] Well known config file 'Runner': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\.runner'
+[2025-05-04 16:36:09Z INFO ConfigurationStore] ConfigFilePath: D:\springboot-GitAction\kubegitactionnew\actions-runner\.runner
+[2025-05-04 16:36:09Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:36:09Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:36:09Z INFO HostContext] Well known config file 'MigratedRunner': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\.runner_migrated'
+[2025-05-04 16:36:09Z INFO ConfigurationStore] MigratedConfigFilePath: D:\springboot-GitAction\kubegitactionnew\actions-runner\.runner_migrated
+[2025-05-04 16:36:09Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:36:09Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:36:09Z INFO HostContext] Well known config file 'Credentials': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\.credentials'
+[2025-05-04 16:36:09Z INFO ConfigurationStore] CredFilePath: D:\springboot-GitAction\kubegitactionnew\actions-runner\.credentials
+[2025-05-04 16:36:09Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:36:09Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:36:09Z INFO HostContext] Well known config file 'MigratedCredentials': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\.credentials_migrated'
+[2025-05-04 16:36:09Z INFO ConfigurationStore] MigratedCredFilePath: D:\springboot-GitAction\kubegitactionnew\actions-runner\.credentials_migrated
+[2025-05-04 16:36:09Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:36:09Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:36:09Z INFO HostContext] Well known config file 'Service': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\.service'
+[2025-05-04 16:36:09Z INFO ConfigurationStore] ServiceConfigFilePath: D:\springboot-GitAction\kubegitactionnew\actions-runner\.service
+[2025-05-04 16:36:09Z INFO CommandSettings] Flag 'help': 'False'
+[2025-05-04 16:36:09Z INFO CommandSettings] Flag 'version': 'False'
+[2025-05-04 16:36:09Z INFO CommandSettings] Flag 'commit': 'False'
+[2025-05-04 16:36:09Z INFO CommandSettings] Flag 'check': 'False'
+[2025-05-04 16:36:09Z INFO CommandSettings] Command 'configure': 'False'
+[2025-05-04 16:36:09Z INFO CommandSettings] Command 'remove': 'False'
+[2025-05-04 16:36:09Z INFO CommandSettings] Command 'warmup': 'False'
+[2025-05-04 16:36:09Z INFO ConfigurationManager] LoadSettings
+[2025-05-04 16:36:09Z INFO ConfigurationStore] IsConfigured()
+[2025-05-04 16:36:09Z INFO ConfigurationStore] IsConfigured: True
+[2025-05-04 16:36:09Z INFO ConfigurationManager] Is configured: True
+[2025-05-04 16:36:09Z INFO ConfigurationStore] Read setting file: 312 chars
+[2025-05-04 16:36:09Z INFO ConfigurationManager] Settings Loaded
+[2025-05-04 16:36:09Z INFO ConfigurationStore] IsServiceConfigured()
+[2025-05-04 16:36:09Z INFO ConfigurationStore] IsServiceConfigured: False
+[2025-05-04 16:36:09Z INFO CommandSettings] Command 'run': 'True'
+[2025-05-04 16:36:09Z INFO ConfigurationStore] IsConfigured()
+[2025-05-04 16:36:09Z INFO ConfigurationStore] IsConfigured: True
+[2025-05-04 16:36:09Z INFO ConfigurationManager] Is configured: True
+[2025-05-04 16:36:09Z INFO Runner] Could not parse the argument value '' for StartupType. Defaulting to Manual
+[2025-05-04 16:36:09Z INFO Runner] Set runner startup type - Manual
+[2025-05-04 16:36:09Z INFO CommandSettings] Flag 'once': 'False'
+[2025-05-04 16:36:09Z INFO CommandSettings] Flag 'once': 'False'
+[2025-05-04 16:36:09Z INFO Runner] RunAsync
+[2025-05-04 16:36:09Z INFO ConfigurationManager] LoadSettings
+[2025-05-04 16:36:09Z INFO ConfigurationStore] IsConfigured()
+[2025-05-04 16:36:09Z INFO ConfigurationStore] IsConfigured: True
+[2025-05-04 16:36:09Z INFO ConfigurationManager] Is configured: True
+[2025-05-04 16:36:09Z INFO ConfigurationManager] Settings Loaded
+[2025-05-04 16:36:09Z INFO MessageListener] {
+  "AgentId": 2,
+  "AgentName": "MATHEW",
+  "PoolId": 1,
+  "PoolName": "Default",
+  "ServerUrl": "https://pipelinesghubeus10.actions.githubusercontent.com/IiI6bFxAp2rFRBjz4nNfNzLbwC2F4VL5EJueuc1h62PWzSpiXy/",
+  "GitHubUrl": "https://github.com/bijuthottathil/kubegitactionnew",
+  "WorkFolder": "_work"
+}
+[2025-05-04 16:36:09Z INFO MessageListener] Loading Credentials
+[2025-05-04 16:36:09Z INFO ConfigurationStore] HasCredentials()
+[2025-05-04 16:36:09Z INFO ConfigurationStore] stored True
+[2025-05-04 16:36:09Z INFO CredentialManager] GetCredentialProvider
+[2025-05-04 16:36:09Z INFO CredentialManager] Creating type OAuth
+[2025-05-04 16:36:09Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-04 16:36:09Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:36:09Z INFO HostContext] Well known directory 'Root': 'D:\springboot-GitAction\kubegitactionnew\actions-runner'
+[2025-05-04 16:36:09Z INFO HostContext] Well known config file 'RSACredentials': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\.credentials_rsaparams'
+[2025-05-04 16:36:09Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file D:\springboot-GitAction\kubegitactionnew\actions-runner\.credentials_rsaparams
+[2025-05-04 16:36:09Z INFO MessageListener] Attempt to create session.
+[2025-05-04 16:36:09Z INFO MessageListener] Connecting to the Runner Server...
+[2025-05-04 16:36:09Z INFO RunnerServer] EstablishVssConnection
+[2025-05-04 16:36:09Z INFO RunnerServer] Establish connection with 100 seconds timeout.
+[2025-05-04 16:36:09Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2025-05-04 16:36:09Z INFO RunnerServer] EstablishVssConnection
+[2025-05-04 16:36:09Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2025-05-04 16:36:09Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2025-05-04 16:36:09Z INFO RunnerServer] EstablishVssConnection
+[2025-05-04 16:36:09Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2025-05-04 16:36:09Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2025-05-04 16:36:10Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2025-05-04 16:36:10Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2025-05-04 16:36:10Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2025-05-04 16:36:10Z INFO MessageListener] VssConnection created
+[2025-05-04 16:36:10Z INFO Terminal] WRITE LINE: 
+[2025-05-04 16:36:10Z INFO Terminal] WRITE LINE: 
+[2025-05-04 16:36:10Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file D:\springboot-GitAction\kubegitactionnew\actions-runner\.credentials_rsaparams
+[2025-05-04 16:36:10Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file D:\springboot-GitAction\kubegitactionnew\actions-runner\.credentials_rsaparams
+[2025-05-04 16:36:10Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2025-05-04 16:36:10Z INFO MessageListener] Session created.
+[2025-05-04 16:36:10Z INFO Terminal] WRITE LINE: Current runner version: '2.323.0'
+[2025-05-04 16:36:10Z INFO Terminal] WRITE LINE: 2025-05-04 16:36:10Z: Listening for Jobs
+[2025-05-04 16:36:10Z INFO JobDispatcher] Set runner/worker IPC timeout to 30 seconds.
+[2025-05-04 16:36:10Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file D:\springboot-GitAction\kubegitactionnew\actions-runner\.credentials_rsaparams
+[2025-05-04 16:36:10Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2025-05-04 16:36:11Z INFO MessageListener] Message '6923790535234712562' received from session '47b48c46-2e7c-425f-976c-0ac1410f6915'.
+[2025-05-04 16:36:11Z INFO ConfigurationStore] HasCredentials()
+[2025-05-04 16:36:11Z INFO ConfigurationStore] stored True
+[2025-05-04 16:36:11Z INFO CredentialManager] GetCredentialProvider
+[2025-05-04 16:36:11Z INFO CredentialManager] Creating type OAuth
+[2025-05-04 16:36:11Z INFO CredentialManager] Creating credential type: OAuth
+[2025-05-04 16:36:11Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file D:\springboot-GitAction\kubegitactionnew\actions-runner\.credentials_rsaparams
+[2025-05-04 16:36:11Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file D:\springboot-GitAction\kubegitactionnew\actions-runner\.credentials_rsaparams
+[2025-05-04 16:36:11Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file D:\springboot-GitAction\kubegitactionnew\actions-runner\.credentials_rsaparams
+[2025-05-04 16:36:11Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2025-05-04 16:36:12Z INFO JobDispatcher] Job request 0 for plan 1ef484d2-86c4-4e4f-9b19-decfa9d179ac job c6888efe-eeb6-5a2b-a408-6ffb524213c0 received.
+[2025-05-04 16:36:12Z INFO MessageListener] Received job status event. JobState: Busy
+[2025-05-04 16:36:12Z INFO MessageListener] _getMessagesTokenSource is already disposed.
+[2025-05-04 16:36:12Z INFO Terminal] WRITE LINE: 2025-05-04 16:36:12Z: Running job: deploy
+[2025-05-04 16:36:12Z INFO JobDispatcher] Start renew job request 0 for job c6888efe-eeb6-5a2b-a408-6ffb524213c0.
+[2025-05-04 16:36:12Z INFO JobDispatcher] Successfully renew job c6888efe-eeb6-5a2b-a408-6ffb524213c0, job is valid till 5/4/2025 4:46:14 PM
+[2025-05-04 16:36:13Z INFO HostContext] Well known directory 'Bin': 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:36:13Z INFO ProcessInvokerWrapper] Starting process:
+[2025-05-04 16:36:13Z INFO ProcessInvokerWrapper]   File name: 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin\Runner.Worker.exe'
+[2025-05-04 16:36:13Z INFO ProcessInvokerWrapper]   Arguments: 'spawnclient 2284 2296'
+[2025-05-04 16:36:13Z INFO ProcessInvokerWrapper]   Working directory: 'D:\springboot-GitAction\kubegitactionnew\actions-runner\bin'
+[2025-05-04 16:36:13Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-05-04 16:36:13Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-05-04 16:36:13Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'True'
+[2025-05-04 16:36:13Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-05-04 16:36:13Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2025-05-04 16:36:13Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-05-04 16:36:13Z INFO ProcessInvokerWrapper]   High priority process: 'True'
+[2025-05-04 16:36:13Z INFO ProcessInvokerWrapper] Process started with process id 21988, waiting for process exit.
+[2025-05-04 16:36:13Z INFO JobDispatcher] Send job request message to worker for job c6888efe-eeb6-5a2b-a408-6ffb524213c0.
+[2025-05-04 16:36:13Z INFO ProcessChannel] Sending message of length 21981, with hash '45b069434a5b85ba07cb7cff471a031d752294fe986765172944bcb5df047d5f'
+[2025-05-04 16:36:14Z INFO JobNotification] Entering JobStarted Notification
+[2025-05-04 16:36:14Z INFO JobNotification] Entering StartMonitor
+[2025-05-04 16:37:05Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-04 16:37:05Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-05-04 16:37:05Z INFO ProcessInvokerWrapper] Finished process 21988 with exit code 102, and elapsed time 00:00:52.2029959.
+[2025-05-04 16:37:05Z INFO JobDispatcher] Worker finished for job c6888efe-eeb6-5a2b-a408-6ffb524213c0. Code: 102
+[2025-05-04 16:37:05Z INFO JobDispatcher] finish job request for job c6888efe-eeb6-5a2b-a408-6ffb524213c0 with result: Failed
+[2025-05-04 16:37:05Z INFO Terminal] WRITE LINE: 2025-05-04 16:37:05Z: Job deploy completed with result: Failed
+[2025-05-04 16:37:05Z INFO JobDispatcher] Stop renew job request for job c6888efe-eeb6-5a2b-a408-6ffb524213c0.
+[2025-05-04 16:37:05Z INFO JobDispatcher] job renew has been cancelled, stop renew job c6888efe-eeb6-5a2b-a408-6ffb524213c0.
+[2025-05-04 16:37:05Z INFO JobNotification] Entering JobCompleted Notification
+[2025-05-04 16:37:05Z INFO JobNotification] Entering EndMonitor
+[2025-05-04 16:37:05Z INFO MessageListener] Received job status event. JobState: Online
