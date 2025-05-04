@@ -16,7 +16,7 @@ jobs:
         minikube status
         kubectl config current-context
     deployconfig:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: build  # 👈 Runs *after* the build job completes
     steps:
       - name: deploy configuration
