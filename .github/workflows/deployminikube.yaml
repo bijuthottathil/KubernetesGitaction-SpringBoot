@@ -2,23 +2,21 @@ name: Deploy Spring Boot to Minikube
 
 on:
   workflow_dispatch: 
-
 jobs:
-  configcheck:
+  deploy:
     runs-on: self-hosted
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    
+
     - name: Show Minikube Status
       run: |
         minikube status
         kubectl config current-context
-    deployconfig:
-    runs-on: self-hosted
-    needs: build  # 👈 Runs *after* the build job completes
-    steps:
-      - name: deploy configuration
-        run: |
-             kubectl apply -f db-config.yaml
+    - name: Apply Kubernetes Configuration
+      run: |
+        kubectl apply -f db-config.yaml
+    - name: Verify Pod Status
+      run: |
+        kubectl get pods
