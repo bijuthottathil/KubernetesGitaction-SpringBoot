@@ -17,6 +17,15 @@ jobs:
     - name: Apply Kubernetes Configuration
       run: |
         kubectl apply -f db-config.yaml
+    - name: Execute secret Configuration
+      run: |
+        kubectl apply -f mysql-secrets.yaml
+    - name: Do Db-Deployment
+      run: |
+        kubectl apply -f db-deployment.yaml
+    - name: Do App-Deployment
+      run: |
+        kubectl apply -f app-deployment.yaml
     - name: Verify Pod Status
       run: |
         kubectl get pods
